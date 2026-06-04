@@ -32,6 +32,7 @@ def run(args):
         puzzle_start = time.time()
 
         # solve
+        x = task.get_input(i)
         if args.naive_run:
             ys, info = naive_solve(args, task, i)
         else:
@@ -39,7 +40,7 @@ def run(args):
 
         # log
         infos = [task.test_output(i, y) for y in ys]
-        info.update({'idx': i, 'ys': ys, 'infos': infos, 'usage_so_far': gpt_usage(args.backend)})
+        info.update({'idx': i, 'x': x, 'ys': ys, 'infos': infos, 'usage_so_far': gpt_usage(args.backend)})
         logs.append(info)
         with open(file, 'w') as f:
             json.dump(logs, f, indent=4)

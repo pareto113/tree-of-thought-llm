@@ -1,5 +1,5 @@
 {
-  "source_log": "logs/game24/qwen2.5:14b-instruct_0.7_naive_cot_sample_1_start900_end903.json",
+  "source_log": "logs/game24/qwen2.5_14b-instruct_0.7_naive_cot_sample_1_start900_end903.json",
   "n_puzzles": 3,
   "format": {
     "propose": {

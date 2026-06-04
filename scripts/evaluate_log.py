@@ -157,12 +157,20 @@ def evaluate(log_path: str, save: bool = False):
             accs = entry.get('accs', [0])
         cnt_avg += sum(accs) / len(accs)
         cnt_any += int(any(accs))
+        answers = [y.strip().split('\n')[-1] for y in ys]
+        if entry.get('x'):
+            input_str = entry['x']
+        elif entry.get('steps'):
+            input_str = entry['steps'][0]['x']
+        else:
+            input_str = '?'
         results.append({
             'idx':     idx,
-            'input':   entry['steps'][0]['x'] if entry.get('steps') else '?',
+            'input':   input_str,
             'any':     any(accs),
             'avg':     sum(accs) / len(accs),
-            'answers': [y.strip().split('\n')[-1] for y in ys],
+            'accs':    accs,
+            'answers': answers,
         })
 
     # ── 출력 ──────────────────────────────────────────────────────
@@ -213,7 +221,9 @@ def evaluate(log_path: str, save: bool = False):
     print(f"  {'-'*58}")
     for r in results:
         mark = '✅' if r['any'] else '❌'
-        ans  = r['answers'][0] if r['answers'] else '-'
+        # 정답(r=1)이 있으면 첫 번째 정답을 표시, 없으면 첫 번째 답 표시
+        correct_idx = next((i for i, a in enumerate(r['accs']) if a == 1), None)
+        ans = r['answers'][correct_idx] if correct_idx is not None else (r['answers'][0] if r['answers'] else '-')
         print(f"  {r['idx']:<6} {r['input']:<16} {mark:<6} {r['avg']:<8.3f}  {ans}")
 
     print(f"\n  cnt_avg (평균 정답률): {cnt_avg/n_puzzles:.3f}")
@@ -251,7 +261,7 @@ def evaluate(log_path: str, save: bool = False):
             'cnt_avg':  round(cnt_avg / n_puzzles, 4),
             'cnt_any':  cnt_any,
             'cnt_any_rate': round(cnt_any / n_puzzles, 4),
-            'per_puzzle': results,
+            'per_puzzle': [{k: v for k, v in r.items() if k != 'accs'} for r in results],
         },
         'usage': usage,
     }
