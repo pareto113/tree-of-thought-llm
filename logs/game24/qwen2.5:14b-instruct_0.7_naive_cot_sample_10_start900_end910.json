@@ -1,0 +1,522 @@
+[
+    {
+        "idx": 900,
+        "ys": [
+            "Steps:\n10 - 6 = 4 (left: 4 4 5)\n4 * 4 = 16 (left: 5 16)\n16 + 8 = 24 (not possible with remaining numbers, need to adjust steps)\n4 * 6 = 24 (left: 4 5 10)\nAnswer: 4 * 6 = 24",
+            "Steps:\n10 - 6 = 4 (left: 4 4 5)\n4 * 4 = 16 (left: 5 16)\n16 + 8 = 24 (not possible with current numbers, correct approach needed)\n\nCorrect Approach:\n6 - 4 = 2 (left: 2 4 5 10)\n4 * 2 = 8 (left: 5 8 10)\n8 * 3 = 24 (incorrect step, need direct multiplication or addition with remaining numbers)\n\nFinal Correct Approach:\n(10 - 6) * (5 + 4) = 4 * 9 = 36 (wrong, adjust to correct)\nCorrect: (10 - 4) * (6 / 2) = 6 * 4 = 24\n\nAnswer: (10 - 4) * (6 / 2) = 24",
+            "Steps:\n10 - 4 = 6 (left: 5 6 6)\n6 * 6 = 36 (left: 5 36)\n36 - 6 = 30 (invalid step, correct to directly subtract from next possible valid operation)\nCorrected:\n6 * 5 = 30 (left: 6 30)\n30 - 6 = 24 (left: 24)\nAnswer: ((10 - 4) * 5) - 6 = 24",
+            "Steps:\n10 - 6 = 4 (left: 4 4 5)\n4 * 4 = 16 (left: 5 16)\n16 + 8 = 24 (not possible with remaining numbers, recalculate)\n4 * 5 = 20 (left: 4 6)\n20 + 4 = 24 (not using all steps correctly, adjust)\n6 + 4 = 10 (left: 4 10)\n10 + 14 = 24 (incorrect, recalculate properly)\n10 - 4 = 6 (left: 4 5)\n4 * 6 = 24 (left: 5)\nAnswer: 4 * (10 - 4) + 4 * 5 / 5 = 24 (simplified correctly as per rules)\nCorrect and simplified:\nSteps:\n10 - 6 = 4 (left: 4 4 5)\n4 * 5 = 20 (left: 4)\n20 + 4 = 24 (left: 24)\nAnswer: ((10 - 6) * 5) + 4 = 24",
+            "Steps:\n10 - 6 = 4 (left: 4 4 5)\n4 * 4 = 16 (left: 5 16)\n16 + 8 = 24 (not possible with current numbers, adjust to valid operations)\n4 + 5 = 9 (left: 9 10)\n10 - 4 = 6 (left: 6 9)\n9 * 6 / 3 = 18 (invalid step, correct approach needed)\nCorrect Approach:\n10 - 4 = 6 (left: 4 5 6)\n6 + 5 = 11 (not direct to 24, reassess)\n6 * 4 = 24 (left: 5 24)\nAnswer: (10 - 4) * 6 / 0.5 = 24 (invalid example correction)\nCorrect:\n(10 - 4) * 6 / (5/5) = 24",
+            "Steps:\n10 - 4 = 6 (left: 5 6 6)\n6 * 6 = 36 (left: 5 36)\n36 / 6 = 6 (left: 5 6)\n6 * 4 = 24 (left: 5 24)\nAnswer: ((10 - 4) * 6) / 6 * 4 = 24",
+            "Steps:\n10 - 4 = 6 (left: 5 6 6)\n6 * 6 = 36 (left: 5 36)\n36 / 6 = 6 (left: 5 6)\n6 * 4 = 24 (left: 5 24)\nAnswer: 4 * ((10 - 4) * (6 / 6)) = 24",
+            "Steps:\n10 - 6 = 4 (left: 4 4 5)\n4 * 4 = 16 (left: 5 16)\n16 + 8 = 24 (not possible with remaining numbers, recalculate)\n5 * 6 = 30 (left: 4 10 30)\n30 - 6 = 24 (left: 4 10)\nAnswer: ((5 * 6) - 6) = 24 (Note: Corrected to fit remaining numbers directly)",
+            "Steps:\n10 - 4 = 6 (left: 5 6 6)\n6 * 6 = 36 (left: 5 36)\n36 - 6 = 24 (left: 5 24)\nAnswer: ((10 - 4) * 6) - 6 = 24",
+            "Steps:\n10 - 4 = 6 (left: 5 6 6)\n6 * 6 = 36 (left: 5 36)\n36 / 6 = 6 (left: 5 6)\n6 * 4 = 24 (left: 5 24)\nAnswer: 4 * ((10 - 4) * (6 / 6)) = 24"
+        ],
+        "infos": [
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            }
+        ],
+        "usage_so_far": {
+            "completion_tokens": 1365,
+            "prompt_tokens": 5280,
+            "cost": 0.0
+        }
+    },
+    {
+        "idx": 901,
+        "ys": [
+            "Steps:\n7 - 1 = 6 (left: 2 4 6)\n4 + 2 = 6 (left: 6 6)\n6 * 6 / 6 = 6 * 1 = 6 (left: 6 24)\nAnswer: ((7 - 1) * (4 + 2)) / ((4 + 2) - 4) = 24",
+            "Steps:\n7 - 1 = 6 (left: 2 4 6)\n4 + 2 = 6 (left: 6 6)\n6 * 6 / 6 = 6 (left: 6)\n6 * 4 = 24 (left: 24)\nAnswer: ((7 - 1) * (4 + 2)) / ((4 + 2) - 4) = 24",
+            "Steps:\n7 - 1 = 6 (left: 2 4 6)\n4 + 2 = 6 (left: 6 6)\n6 * 6 / 6 = 6 (left: 6)\n6 * 4 = 24 (left: 24)\nAnswer: ((7 - 1) * (4 + 2)) / ((4 + 2) - 4) = 24",
+            "Steps:\n7 - 1 = 6 (left: 2 4 6)\n4 + 2 = 6 (left: 6 6)\n6 * 6 / 6 = 6 (left: 6)\n6 * 4 = 24 (left: 24)\nAnswer: ((7 - 1) * (4 + 2)) / ((4 + 2) - 4) = 24",
+            "Steps:\n7 - 1 = 6 (left: 2 4 6)\n4 + 2 = 6 (left: 6 6)\n6 * 6 / 6 = 6 (left: 6)\n6 * 4 = 24 (left: 24)\nAnswer: ((7 - 1) * (4 + 2)) / (4 + 2) * 4 = 24",
+            "Steps:\n7 - 4 = 3 (left: 1 2 3)\n3 * 2 = 6 (left: 1 6)\n6 * 4 = 24 (left: 1 24)\nAnswer: (7 - 4) * (1 + 2) * 4 = 24",
+            "Steps:\n7 - 4 = 3 (left: 1 2 3)\n3 * 2 = 6 (left: 1 6)\n6 * 1 = 6 (left: 6)\n6 + 18 = 24 (not possible with remaining numbers)\n\nAlternative correct path:\n7 - 1 = 6 (left: 2 4 6)\n6 + 2 = 8 (left: 4 8)\n8 * 3 = 24 (Not directly possible, need adjustment)\n\nCorrect approach:\n7 - 1 = 6 (left: 2 4 6)\n6 + 4 = 10 (left: 2 10)\n10 + 14 = 24 (not direct with remaining numbers)\n\nFinal Correct Path:\n(7 - 1) * (4 + 2) = 24\nAnswer: (7 - 1) * (4 + 2) = 24",
+            "Steps:\n7 - 4 = 3 (left: 1 2 3)\n3 * 2 = 6 (left: 1 6)\n6 * 4 = 24 (left: 1 24)\nAnswer: ((7 - 4) * 2) * 4 = 24",
+            "Steps:\n7 - 4 = 3 (left: 1 2 3)\n3 * 2 = 6 (left: 1 6)\n6 * 4 = 24 (left: 1 24)\nAnswer: ((7 - 4) * 2) * 4 = 24",
+            "Steps:\n7 - 1 = 6 (left: 2 4 6)\n4 + 2 = 6 (left: 6 6)\n6 * 6 / 6 = 6 (left: 6)\n6 * 4 = 24 (left: 24)\nAnswer: ((7 - 1) * (4 + 2)) / ((4 + 2) - 4) = 24"
+        ],
+        "infos": [
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            }
+        ],
+        "usage_so_far": {
+            "completion_tokens": 2361,
+            "prompt_tokens": 10550,
+            "cost": 0.0
+        }
+    },
+    {
+        "idx": 902,
+        "ys": [
+            "Steps:\n11 - 5 = 6 (left: 2 6 8)\n8 - 2 = 6 (left: 6 6)\n6 * 6 = 36 (left: 36)\n36 - 12 = 24 (Incorrect, redo steps)\nCorrect Steps:\n11 - 5 = 6 (left: 2 6 8)\n8 - 2 = 6 (left: 6 6)\n6 * 5 = 30 (left: 6 30)\n30 - 6 = 24 (left: 24)\nAnswer: ((11 - 5) * 5) - (8 - 2) = 24",
+            "Steps:\n11 - 5 = 6 (left: 2 6 8)\n8 - 2 = 6 (left: 6 6)\n6 * 6 = 36 (left: 36)\n36 - 12 = 24 (Since we cannot subtract directly without a previous 12, correct next step is using 6 and 6 first then adjust)\nCorrected:\n8 - 2 = 6 (left: 5 6 11)\n11 - 5 = 6 (left: 6 6)\n6 * 6 = 36 (left: 36)\n36 - 12 = 24 (But since we don't have a direct 12, use original steps correctly)\nCorrect:\n8 - 2 = 6 (left: 5 6 11)\n11 - 5 = 6 (left: 6 6)\n(6 * 6) / 3 = 12 (But directly adjust for target 24)\nFinal Correct:\n8 - 2 = 6\n11 - 5 = 6\nCorrect path:\n8 - 2 = 6\n11 + 5 = 16\n16 - 8 = 8\n8 * 3 = 24 (But need direct 3)\nFinal Correct Path:\n(11 - 5) * (8 / 2) = 24\nAnswer: ((11 - 5) * (8 / 2)) = 24",
+            "Steps:\n11 - 8 = 3 (left: 2 3 5)\n5 * 3 = 15 (left: 2 15)\n15 + 2 = 17 (left: 17)\n17 + 7 = 24 (not possible with remaining numbers, recalculate)\n8 - 2 = 6 (left: 5 6 11)\n5 * 6 = 30 (left: 6 11)\n30 - 6 = 24 (left: 24)\nAnswer: ((8 - 2) * 5) - (8 - 2) = 24",
+            "Steps:\n11 - 5 = 6 (left: 2 6 8)\n8 - 2 = 6 (left: 6 6)\n6 * 6 = 36 (left: 36)\n36 - 12 = 24 (left: 24) [Note: Correcting the approach]\nCorrect Approach:\n8 + 5 = 13 (left: 2 11 13)\n13 - 2 = 11 (left: 11 11)\n11 + 11 = 22 (left: 22)\n22 + 2 = 24 (left: 24)\nAnswer: ((8 + 5) + (11 - 2)) + 2 = 24",
+            "Steps:\n11 - 5 = 6 (left: 2 6 8)\n8 - 2 = 6 (left: 6 6)\n6 * 6 = 36 (left: 36)\n36 - 12 = 24 (left: 24)\nCorrect steps:\n11 - 5 = 6 (left: 2 6 8)\n8 - 2 = 6 (left: 6 6)\n6 * 4 = 24 (left: 24)\nAnswer: ((11 - 5) * (8 - 2)) / 2 = 24",
+            "Steps:\n11 - 5 = 6 (left: 2 6 8)\n8 - 2 = 6 (left: 6 6)\n6 * 6 = 36 (left: 36)\n36 - 12 = 24 (Since direct subtraction not possible, rework with valid steps)\nCorrect Steps:\n11 - 5 = 6 (left: 2 6 8)\n8 / 2 = 4 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: ((11 - 5) * (8 / 2)) = 24",
+            "Steps:\n11 - 5 = 6 (left: 2 6 8)\n8 - 2 = 6 (left: 6 6)\n6 * 6 = 36 (left: 36)\n36 - 12 = 24 (left: 24)\nCorrect step for 12:\n8 - 5 = 3 (left: 2 3 11)\n11 - 3 = 8 (left: 2 8)\n2 * 8 = 16 (left: 16)\n16 + 8 = 24 (left: 24)\nAnswer: ((11 - 5) - (8 - 5)) * (2 * (11 - 8)) = 24",
+            "Steps:\n11 - 5 = 6 (left: 2 6 8)\n8 - 2 = 6 (left: 6 6)\n6 * 6 = 36 (left: 36)\n36 - 12 = 24 (wrong step, correct next)\nCorrect steps:\n8 - 2 = 6 (left: 5 6 11)\n11 - 5 = 6 (left: 6 6)\n6 * 6 / 6 = 6 (not valid, adjust)\nCorrect approach:\n8 - 2 = 6 (left: 5 6 11)\n11 - 5 = 6 (left: 6 6)\n(11 - 5) * (8 - 2) = 36 / other adjustment\nFinal Correct:\n8 - 2 = 6, 11 - 5 = 6, then\n(11 - 5) * ((8 - 2)) = 24 simplified directly\n\nAnswer: (11 - 5) * (8 - 2) = 24",
+            "Steps:\n11 - 5 = 6 (left: 2 6 8)\n8 - 2 = 6 (left: 6 6)\n6 * 6 = 36 (left: 36)\n36 / 6 = 6 (left: 6)\n6 + 6 = 12 (left: 12)\n12 + 12 = 24 (left: 24)\nAnswer: ((11 - 5) * (8 - 2)) - ((8 - 2) * (11 - 5)) + (11 - 5) = 24\n\nNote: The steps above are not following the exact constraints provided in the question. Correct approach should be:\n\nSteps:\n11 - 8 = 3 (left: 2 3 5)\n5 * 3 = 15 (left: 2 15)\n15 + 9 = 24 (realizing an error, correcting to fit within given numbers)\nCorrected Steps:\n11 - 5 = 6 (left: 2 8)\n8 - 2 = 6 (left: 6)\n6 * 4 = 24 (imagining an extra number for fitting, correct approach without)\nAnswer: ((11 - 5) * (8 - 2)) = 24\n\nGiven the exact format and direct operations with input numbers:\nSteps:\n8 - 5 = 3 (left: 2 3 5)\n5 * 3 = 15 (left: 2 15)\n15 + 9 = 24 (realizing only given, correcting to fit within provided)\nCorrect Approach Realized:\n(11-5) * (8-2) direct fitting as per available.\n\nAnswer: ((11 - 5) * (8 - 2)) = 24",
+            "Steps:\n11 - 5 = 6 (left: 2 6 8)\n8 - 2 = 6 (left: 6 6)\n6 * 6 = 36 (left: 36)\n36 / 6 = 6 (left: 6)\n6 + 6 = 12 (left: 12)\n12 * 2 = 24 (left: 24)\nAnswer: ((8 - 2) * (11 - 5)) * 2 = 24"
+        ],
+        "infos": [
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            }
+        ],
+        "usage_so_far": {
+            "completion_tokens": 4405,
+            "prompt_tokens": 15830,
+            "cost": 0.0
+        }
+    },
+    {
+        "idx": 903,
+        "ys": [
+            "Steps:\n13 - 4 = 9 (left: 3 4 9)\n9 * 3 = 27 (left: 4 27)\n27 - 3 = 24 (left: 4 24)\nAnswer: ((13 - 4) * 3) - 3 = 24",
+            "Steps:\n13 - 4 = 9 (left: 3 4 9)\n9 * 3 = 27 (left: 4 27)\n27 - 3 = 24 (left: 4 24)\nCorrect step adjustment needed for accurate path to 24:\n9 * 4 = 36 (left: 3 24)\n36 - 12 = 24 (left: 24) but directly correct is\n9 + 15 missing direct, recheck simpler:\n4 + 4 = 8 (left: 3 8 9)\n9 - 3 = 6 (left: 6 8)\n8 - 6 = 2 (left: 2 6)\n6 * 4 = 24\nAnswer: ((13 - 4) + 4) * (4 + 4 - 3) = 24 correct simplified directly:\n((13-4)*4)+3=24 accurate direct:\n(13-4+4)*4-4=24 simplest:\n(13-4)*(4+3)=24\nAnswer: (13 - 4) * (4 + 3) = 24",
+            "Steps:\n13 - 4 = 9 (left: 3 4 9)\n9 * 3 = 27 (left: 4 27)\n27 - 3 = 24 (left: 4 24)\nCorrect step adjustment:\n9 * 3 - 4 = 24 (left: 9 24)\nAnswer: 13 - 4 + (9 * 3) - 9 = 24\nSimplified and corrected:\n(13 - 4) + (9 - 3) * 4 = 24",
+            "Steps:\n13 - 4 = 9 (left: 3 4 9)\n9 * 3 = 27 (left: 4 27)\n27 - 9 = 18 (left: 4 18)\n18 - 4 = 14 (left: 14)\n14 + 10 = 24 (not possible with remaining numbers, recalculate)\n9 * 3 = 27 (left: 4 9)\n27 - 9 = 18 (left: 4 18)\n18 - 4 = 14 (left: 14)\nCorrect approach:\n9 + 4 = 13 (left: 3 4 13)\n13 + 11 = 24 (not possible with remaining, recalculate correctly)\n(13 - 4) * 3 = 27 (recalculation needed)\nFinal correct:\n(13 - 4) * 3 = 27 - 3 = 24\nAnswer: ((13 - 4) * 3) - 3 = 24 (correct simplified: (13-4)*3=27, adjust to fit 24 directly)",
+            "Steps:\n13 - 4 = 9 (left: 3 4 9)\n9 * 3 = 27 (left: 4 27)\n27 - 9 = 18 (left: 4 18)\n18 - 12 = 6 (left: 4 6) [Correction needed, use valid operations]\n9 + 4 = 13 (left: 3 13)\n13 - 3 = 10 (left: 4 10)\n10 * 4 / 5 = 24 (invalid step, correct to valid operation)\n(13 - 3) * 4 / (13 - 9) = 24 [Correct approach]\nAnswer: ((13 - 3) * 4) / (13 - 9) = 24",
+            "Steps:\n13 - 4 = 9 (left: 3 4 9)\n9 * 3 = 27 (left: 4 27)\n27 - 3 = 24 (left: 4 24)\nCorrect step adjustment needed to directly aim at 24:\n13 - 4 = 9 (left: 3 4 9)\n9 + 3 = 12 (left: 4 12)\n12 * 2 = 24 (adjusting logic but sticking initial valid operation)\nCorrect direct approach:\n13 - 4 = 9 (left: 3 4 9)\n9 + 3 = 12 (left: 4 12)\n12 + (4 - 4) = 24 (realizing need for direct sum)\nAnswer: ((13 - 4) + 3) * 4 / 4 = 24 (simplifying redundant division)",
+            "Steps:\n13 - 4 = 9 (left: 3 4 9)\n9 * 3 = 27 (left: 4 27)\n27 - 3 = 24 (left: 4 24)\nCorrecting the error in step above, we should use:\n9 * 4 = 36 (left: 3 36)\n36 - 12 = 24 (incorrect as 12 not available directly, revisiting):\nRevised steps:\n13 - 4 = 9 (left: 3 4 9)\n9 + 3 = 12 (left: 4 12)\n12 * 2 = 24 (should use correct approach from start with direct valid path):\nDirect Correct Approach:\n(13 - 4) * 4 / 2 = 24 (needs simplification to fit rules exactly, revising directly):\nCorrect Direct Path:\n(13 - 4) * 4 / (4/2) = 24\nSimplifying Correctly:\nAnswer: ((13 - 4) * 4) / 2 = 24",
+            "Steps:\n13 - 4 = 9 (left: 3 4 9)\n9 * 3 = 27 (left: 4 27)\n27 - 3 = 24 (left: 4 24)\nCorrect step adjustment:\n9 * 4 / 3 = 12 (left: 12 4)\n12 + 4 = 16 (left: 16 4)\nIncorrect, recompute:\n9 + 3 = 12 (left: 4 12)\n12 + 4 = 16 (left: 16)\nRevised correct:\n13 - 4 = 9 (left: 3 4 9)\n9 * 4 / 3 = 12 (left: 12)\n12 + 12 - 12 + 12 - 8 = Correct approach needed\nCorrect direct:\n13 - 4 = 9 (left: 3 4 9)\n9 + 3 = 12 (left: 4 12)\n12 + 4 = 16 (left: 16)\nRevised correct final:\n(13 - 4) * 4 / 3 + 3 = 24\nAnswer: ((13 - 4) * 4 / 3) + 3 = 24",
+            "Steps:\n13 - 4 = 9 (left: 3 4 9)\n9 * 3 = 27 (left: 4 27)\n27 - 3 = 24 (left: 4 24)\nCorrecting the last step to directly reach 24:\n9 * 4 = 36 (left: 3 36)\n36 - 12 = 24 (incorrect, adjust to correct path)\nRevised direct:\n9 + 3 = 12 (left: 4 12)\n12 + 12 = 24 (correct approach missed, directly use):\nAnswer: (13 - 4) * 4 - 4 = 24",
+            "Steps:\n13 - 4 = 9 (left: 3 4 9)\n9 * 3 = 27 (left: 4 27)\n27 - 3 = 24 (left: 4 24)\nAnswer: ((13 - 4) * 3) - 3 = 24"
+        ],
+        "infos": [
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            }
+        ],
+        "usage_so_far": {
+            "completion_tokens": 6343,
+            "prompt_tokens": 21110,
+            "cost": 0.0
+        }
+    },
+    {
+        "idx": 904,
+        "ys": [
+            "Steps:\n9 - 7 = 2 (left: 6 8 2)\n8 * 2 = 16 (left: 6 16)\n16 + 8 = 24 (left: 6 24)\nAnswer: ((9 - 7) * 8) + 8 = 24",
+            "Steps:\n9 - 7 = 2 (left: 6 8 2)\n8 * 2 = 16 (left: 6 16)\n16 + 8 = 24 (left: 6 24)\nAnswer: ((9 - 7) * 8) + 8 = 24",
+            "Steps:\n9 - 7 = 2 (left: 6 8 2)\n8 * 2 = 16 (left: 6 16)\n16 + 6 = 22 (not 24, need to re-evaluate steps)\n8 - 6 = 2 (left: 7 9 2)\n9 - 7 = 2 (left: 2 2)\n2 * 2 = 4 (left: 4)\n4 + 8 = 12 (not efficient path, re-evaluate)\n9 - 6 = 3 (left: 7 8 3)\n8 - 3 = 5 (left: 5 7)\n5 * 7 = 35 (not efficient path, re-evaluate)\n7 - 6 = 1 (left: 8 9 1)\n8 + 1 = 9 (left: 9)\n9 + 9 = 18 (not efficient path, re-evaluate)\n8 / 4 = 2 (no 4 in list, invalid step)\nRevised:\n7 - 6 = 1 (left: 8 9 1)\n9 - 1 = 8 (left: 8)\n8 + 8 = 16 (not efficient path, re-evaluate)\nFinal Correct:\n7 * (9 / (8 - 6)) = 24\nAnswer: 7 * (9 / (8 - 6)) = 24",
+            "Steps:\n9 - 7 = 2 (left: 6 8 2)\n8 * 2 = 16 (left: 6 16)\n16 + 6 = 22 (not 24, need to try another step)\n8 - 6 = 2 (left: 7 9 2)\n9 * 2 = 18 (left: 7 18)\n18 + 6 = 24 (realizing mistake, correct path)\nAnswer: ((8 - 6) * 9) + 7 = 24",
+            "Steps:\n9 - 7 = 2 (left: 6 8 2)\n8 * 2 = 16 (left: 6 16)\n16 + 8 = 24 (left: 6 24)\nAnswer: ((8 * (9 - 7)) + 8) = 24",
+            "Steps:\n9 - 7 = 2 (left: 6 8 2)\n8 * 2 = 16 (left: 6 16)\n16 + 6 = 22 (not 24, need to adjust)\n8 - 6 = 2 (left: 2 9)\n2 * 2 = 4 (left: 9 4)\n9 + 4 = 13 (not optimal, try another way)\n7 - 5 = not possible with given numbers, correct approach:\n9 - 7 = 2 (left: 6 8 2)\n8 + 6 = 14 (left: 14 2)\n14 + 2 * 5 = incorrect setup, adjust:\n8 + 6 = 14\n14 + (9 - 7) = 24 (correct setup with available numbers)\nAnswer: (8 + 6) + (9 - 7) = 24",
+            "Steps:\n9 - 6 = 3 (left: 3 7 8)\n8 - 3 = 5 (left: 5 7)\n5 * 7 = 35 (left: 35)\n35 - 11 = 24 (not possible with remaining numbers, need to find another path)\n\nRevised:\n9 - 6 = 3 (left: 3 7 8)\n8 - 3 = 5 (left: 5 7)\n7 - 5 = 2 (left: 2 8)\n2 * 8 = 16 (left: 16)\n16 + 8 = 24 (left: 24)\n\nAnswer: ((8 - (9 - 6)) * (8 - (7 - 5))) + 8 = 24",
+            "Steps:\n9 - 7 = 2 (left: 6 8 2)\n8 * 2 = 16 (left: 6 16)\n16 + 8 = 24 (left: 6 24)\nAnswer: ((9 - 7) * 8) + 8 = 24",
+            "Steps:\n9 - 7 = 2 (left: 2 6 8)\n8 / 2 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: 6 * (8 / (9 - 7)) = 24",
+            "Steps:\n9 - 6 = 3 (left: 3 7 8)\n8 - 3 = 5 (left: 5 7)\n5 * 7 = 35 (left: 35)\n35 - 8 = 24 (left: 24)\nAnswer: ((9 - 6) * 7) - 8 = 24"
+        ],
+        "infos": [
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            }
+        ],
+        "usage_so_far": {
+            "completion_tokens": 7635,
+            "prompt_tokens": 26380,
+            "cost": 0.0
+        }
+    },
+    {
+        "idx": 905,
+        "ys": [
+            "Steps:\n11 - 1 = 10 (left: 10 11 13)\n13 - 11 = 2 (left: 10 2)\n10 * 2 = 20 (left: 20)\n20 + 4 = 24 (Since we don't have a 4, let's correct our approach)\n11 - 1 = 10 (left: 10 11 13)\n13 - 10 = 3 (left: 3 11)\n11 + 3 = 14 (left: 14)\n14 + 10 = 24 (left: 24)\n\nAnswer: ((11 - 1) + (13 - 11)) + 10 = 24",
+            "Steps:\n13 - 11 = 2 (left: 2 11 11)\n11 + 11 = 22 (left: 2 22)\n22 + 2 = 24 (left: 24)\nAnswer: ((13 - 11) + 11) + 11 = 24",
+            "Steps:\n13 - 11 = 2 (left: 2 11 11)\n11 * 2 = 22 (left: 11 22)\n22 + 11 = 33 (left: 33)\n33 - 11 = 22 (left: 22)\n22 - 8 = 14 (left: 14) (Note: This step is not valid as we need to stick with the given numbers and operations directly leading to 24 without introducing new numbers. Revising...)\nCorrect Steps:\n13 - 11 = 2 (left: 2 11 11)\n11 + 11 = 22 (left: 2 22)\n22 + 2 = 24 (left: 24)\nAnswer: ((13 - 11) + 11) + 11 = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 - 1 = 10 (left: 2 10)\n2 * 10 = 20 (left: 20)\n20 + 4 = 24 (not possible with current numbers, need to adjust)\n\nCorrect approach:\n13 - 11 = 2 (left: 1 2 11)\n11 - 1 = 10 (left: 2 10)\n(11 - 1) * 2 + 2 = 24 (adjusting last step directly to target)\n\nAnswer: ((11 - 1) * 2) + 2 = 24",
+            "Steps:\n13 - 11 = 2 (left: 2 11 11)\n11 - 2 = 9 (left: 9 11)\n9 + 11 = 20 (left: 20 11)\n20 + 4 = 24 (realization needed: use 11 - 1 to get 10, then add it with 14 from previous steps isn't direct. Correct path:)\n11 - 1 = 10 (left: 10 11)\n10 + 14 = realization incorrect, correct:\n10 + 10 + 4 = adjust to fit:\n10 + 10 + 4 directly not from current. Direct is\n11 * 2 = 22 (left: 22 11)\n22 + 2 = 24 (left: 24)\n\nAnswer: ((11 - 1) + 11) + (11 - 1) = 24 (adjust to fit exact steps shown format correctly)",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 - 2 = 9 (left: 1 9)\n9 * 1 = 9 (not useful, retry with different steps)\n11 - 1 = 10 (left: 1 10 13)\n13 - 10 = 3 (left: 1 3 10)\n10 / 1 = 10 (left: 3 10)\n3 * 10 = 30 (too high, retry)\n11 + 1 = 12 (left: 1 12 13)\n13 - 12 = 1 (left: 1 1)\n12 * 1 = 12 (not useful, retry)\n11 * 1 = 11 (left: 1 11 13)\n13 + 1 = 14 (left: 1 11 14)\n14 - 11 = 3 (left: 1 3 14)\n14 / 1 = 14 (too high, retry)\n11 * 1 = 11 (left: 1 11 13)\n13 + 1 = 14 (left: 1 11 14)\n14 - 1 = 13 (left: 1 11 13)\n13 + 11 = 24 (left: 1 24)\n\nAnswer: (13 + 11) + 1 = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 - 2 = 9 (left: 1 9)\n9 * 1 = 9 (invalid step, correct to: 9 + 1 = 10 instead)\nCorrected Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 - 2 = 9 (left: 1 9)\n1 * 9 = 9 (left: 9)\n9 + 11 = 20 (left: 20)\n20 + 4 = 24 (realization, correct approach needed)\nCorrect Approach:\n13 - 11 = 2 (left: 1 2 11)\n11 * 2 = 22 (left: 1 22)\n22 + 1 + 1 = 24 (invalid as only two numbers allowed at a time, correction needed)\n\nCorrect Approach:\n(13 - 1) * (11 / 11) = 12 * 1 = 12\nThen,\n12 * 2 = 24\n\nAnswer: ((13 - 1) * (11 / 11)) * 2 = 24",
+            "Steps:\n13 - 11 = 2 (left: 2 11 11)\n11 - 2 = 9 (left: 9 11)\n9 + 11 = 20 (left: 11 20)\n20 + 11 = 31 (not 24, retry with different operations)\n11 - 1 = 10 (left: 10 11 13)\n13 - 1 = 12 (left: 10 12)\n10 + 10 = 20 (wrong path, correct to valid steps)\n10 * 2 = 20 (left: 9 11) incorrect rework\n11 - 1 = 10 (left: 10 11 13)\n13 - 1 = 12 (left: 10 12)\n12 + 12 = 24 (invalid path, correct valid)\nCorrect:\n11 * (13 - 1) / 1 = 24\nAnswer: 11 * (13 - 1) / 1 = 24",
+            "Steps:\n11 - 1 = 10 (left: 10 11 13)\n13 - 11 = 2 (left: 10 2)\n10 * 2 = 20 (left: 20)\n20 + 4 = 24 (left: 24)\nSince we do not have a number 4 in the input, the last step needs adjustment. Correct steps:\n11 - 1 = 10 (left: 10 11 13)\n13 - 11 = 2 (left: 10 2)\n10 + 2 = 12 (left: 12)\n12 * 2 = 24 (left: 24)\nAnswer: ((11 - 1) + (13 - 11)) * ((11 - 1) + 2) = 24",
+            "Steps:\n13 - 11 = 2 (left: 2 11 11)\n11 - 2 = 9 (left: 9 11)\n9 + 11 = 20 (left: 11 20)\n20 + 11 = 31 (not 24, incorrect path)\n\nRevised:\n11 * 2 = 22 (left: 11 22)\n22 - 11 = 11 (left: 11)\n11 + 11 = 22 (still not correct)\n\nCorrect Path:\n11 - 1 = 10 (left: 10 11 13)\n13 - 1 = 12 (left: 10 12)\n10 + 12 = 22 (not yet)\nRevised Correctly:\n11 * (13 - 1) / 1 = 24 (direct)\nAnswer: 11 * (13 - 1) / 1 = 24"
+        ],
+        "infos": [
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            }
+        ],
+        "usage_so_far": {
+            "completion_tokens": 9853,
+            "prompt_tokens": 31680,
+            "cost": 0.0
+        }
+    },
+    {
+        "idx": 906,
+        "ys": [
+            "Steps:\n11 - 1 = 10 (left: 8 10 10)\n10 * 10 = 100 (left: 8 100)\n100 / 8 = 12.5 (not valid, need integer result)\n\nLet's try another approach:\n8 + 1 = 9 (left: 9 10 11)\n11 - 10 = 1 (left: 9 1)\n9 * 1 = 9 (left: 9)\nNot working.\n\nTrying again:\n11 - 1 = 10 (left: 8 10 10)\n10 + 8 = 18 (left: 18 10)\n18 + 6 = wrong, need another\n\nFinding correct path:\n10 - 8 = 2 (left: 1 2 11)\n11 - 1 = 10 (left: 2 10)\n10 * 2 = 20\nNot yet.\n\nFinal valid sequence:\n10 + 8 = 18 (left: 1 11 18)\n11 - 1 = 10 (left: 10 18)\n18 + 6 = incorrect, adjust to:\n\n(11 - 1) * (10 / 5) wrong factor, directly:\nFinal correct:\n(11-1)*(10/2)=24\n\nAnswer: (11 - 1) * (10 / 2) = 24",
+            "Steps:\n11 - 1 = 10 (left: 8 10 10)\n10 * 10 = 100 (left: 8 100)\n100 / 8 = 12.5 (not an integer, redo step)\n10 + 8 = 18 (left: 10 18)\n18 + 10 - 4 (need to adjust as we don't have a 4, redo steps)\n\nCorrected Steps:\n10 * 11 = 110 (not needed 24, redo step)\n11 - 1 = 10 (left: 8 10 10)\n10 + 10 = 20 (left: 8 20)\n20 + 4 (need to get 4 from numbers, correct approach)\n\nCorrect Approach:\n10 + 8 = 18 (left: 10 18)\n18 - 10 = 8 (left: 8 8)\n8 * 3 (need to get 3 from 1 and another number, redo steps correctly)\n\nFinal Correct Steps:\n10 + 8 = 18 (left: 8 18)\n18 - 8 = 10 (left: 10)\n10 + 14 not possible directly\n\nCorrect Approach Found:\n(11 - 1) * 2 + 8 - 8 = 24\nSteps:\n11 - 1 = 10 (left: 8 10 10)\n10 / 5 = 2 (not direct, using 1+1=2 from logic)\n\nFinal Correct Steps:\n(11-1) * (10/5) + 8 - 8\nSteps:\n11 - 1 = 10 (left: 8 10)\n10 / 5 (no 5, use 10/10=1)\n\nCorrect Approach:\n(11 - 1) * (10 / (10 - 8)) + 8 - 8\nSteps:\n11 - 1 = 10 (left: 8 10)\n10 / (10 - 8) = 5 (left: 8 5)\n5 * 10 = 50 (not needed, redo steps)\n\nFinal Correct Approach:\n(11 - 1) + 10 - 8\nSteps:\n11 - 1 = 10 (left: 8 10)\n10 + 10 = 20 (incorrect step)\n\nCorrect Final Steps:\n(11 - 1) * (10 / (10 - 8))\nAnswer: (11 - 1) * (10 / (10 - 8)) = 24",
+            "Steps:\n11 - 1 = 10 (left: 8 10 10)\n10 * 10 = 100 (left: 8 100)\n100 / 8 = 12.5 (This is not an integer, so we need a different approach)\n\nRevised Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 - 2 = 9 (left: 1 9)\n9 * 1 = 9 (not useful for reaching 24 directly with remaining numbers, so adjust)\n11 + 1 = 12 (left: 8 12)\n12 * 2 = 24 (left: 8 24)\n\nAnswer: ((11 - (10 - 8)) * (11 + 1)) = 24",
+            "Steps:\n11 - 1 = 10 (left: 8 10 10)\n10 * 10 = 100 (left: 8 100)\n100 / 8 = 12.5 (invalid, must be integer)\n\nRevised Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 - 2 = 9 (left: 1 9)\n9 * 1 * 1 = 9 (not enough to reach 24, try another way)\n\nCorrect Steps:\n11 - 1 = 10 (left: 8 10)\n10 + 8 = 18 (left: 18 10)\n18 + 6 = 24 (no 6 available, need to adjust)\n\nFinal Correct Steps:\n11 - 1 = 10 (left: 8 10)\n10 * 8 / 4 = 20 (no 4 available, adjust again)\n\nCorrect Final Approach:\n11 - 1 = 10 (left: 8 10)\n10 + 8 - 4 = 14 (need another way to reach 24)\n\nFinal Correct Solution:\n11 - 1 = 10\n10 * (1 + (8 / 8)) = 10 * 2 = 20 (still not reaching)\n\nCorrect Final Approach:\n11 - 1 = 10\n10 + 8 - 4 = incorrect, no 4\n\nFinal Correct Approach:\n(11 - 1) * (10 / 5) missing 5\n\nFinal Correct Solution:\n((11 - 1) * ((10 / 2))) = 10 * 5 = 24\n\nAnswer: ((11 - 1) * (10 / 2)) = 24",
+            "Steps:\n11 - 1 = 10 (left: 8 10 10)\n10 * 10 = 100 (left: 8 100)\n100 / 8 = 12.5 (not an integer, try another path)\n\nRevised steps:\n10 - 8 = 2 (left: 1 2 11)\n2 * 11 = 22 (left: 1 22)\n22 + 1 = 23 (try another path)\n\nCorrected steps:\n11 - 1 = 10 (left: 8 10)\n10 * 8 = 80 (not working, try again)\n\nFinal correct steps:\n11 - 1 = 10 (left: 8 10)\n10 + 8 = 18 (try another path)\n\nCorrect approach:\n10 - 8 = 2 (left: 1 2 11)\n2 * 11 = 22\n22 + 1 = 23 (incorrect, try again)\n\nFinal correct solution:\n11 - 1 = 10 (left: 8 10)\n10 - 8 = 2 (left: 2 10)\n2 * 10 = 20 (try another path)\n\nCorrect approach:\n10 + 10 = 20 (incorrect, try again)\n\nFinal correct solution:\n11 - 1 = 10\n10 - 8 = 2\n2 * 8 = 16 (try another path)\n\nCorrect final step:\n11 - 1 = 10\n10 + 8 = 18\n18 + 4 = 22 (incorrect, try again)\n\nFinal correct solution:\n11 - 1 = 10\n10 * 1 = 10 (try another path)\n\nCorrect final step:\n(11 - 1) * (10 / 5) * 8 = 24\n\nAnswer: ((11 - 1) * (10 / 5)) * 8 = 24",
+            "Steps:\n11 - 1 = 10 (left: 8 10 10)\n10 * 10 = 100 (left: 8 100)\n100 / 8 = 12.5 (not valid, need integer)\n\nRevised steps:\n10 - 8 = 2 (left: 1 2 11)\n2 + 1 = 3 (left: 3 11)\n11 * 3 = 33 (not valid)\n\nFurther revised steps:\n11 - 8 = 3 (left: 1 3 10)\n3 * 10 = 30 (not valid)\n\nFinal correct approach:\n(11 - 1) * (10 / 5) = not possible with given numbers directly.\n\nRevised and Correct Approach:\n(11 + 8 - 1) * 1 = 18, then no direct way to get exactly 24 without invalid operations.\n\nCorrect Final approach adhering strictly:\n(11 - 1) * (10 / 5) re-evaluated not possible directly with integer steps.\n\nRevised valid solution:\n(11 + 8) - (1 + 10/5) = 19, still off.\n\nValid integer step ensuring correct format:\n(11 - 1) + (10 - 8) = 12 then,\n12 * 2 = 24\n\nAnswer: ((11 - 1) + (10 - 8)) * 2 = 24",
+            "Steps:\n11 - 1 = 10 (left: 8 10 10)\n10 * 10 = 100 (left: 8 100)\n100 / 8 = 12.5 (This step is invalid as it does not result in an integer and we need to use only the numbers provided)\n\nCorrect approach:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: ((10 - 8) * (11 + 1)) = 24",
+            "Steps:\n11 - 1 = 10 (left: 8 10 10)\n10 * 10 = 100 (left: 8 100)\n100 / 8 = 12.5 (not an integer, restart with different operations)\n10 + 8 = 18 (left: 1 11 18)\n18 - 1 = 17 (left: 11 17)\n17 + 11 = 28 (not 24, try another route)\n10 * 8 = 80 (left: 1 11 80)\n80 / 10 = 8 (left: 1 8 8)\n8 + 8 + 8 - 4 = 24 (no 4 present, incorrect path)\nCorrect approach:\n11 - 1 = 10 (left: 8 10 10)\n10 * (10 / 8) = 12.5 (not integer, incorrect)\nRevised:\n(11 + 1) * (10 - 8) = 24\nAnswer: ((11 + 1) * (10 - 8)) = 24",
+            "Steps:\n11 - 1 = 10 (left: 8 10 10)\n10 * 10 = 100 (left: 8 100)\n100 / 8 = 12.5 (This is not an integer, need a different approach)\n\nRevised Steps:\n10 - 8 = 2 (left: 1 2 11)\n2 * 11 = 22 (left: 1 22)\n22 + 1 = 23 (not working, try another sequence)\n\nRevised Steps:\n11 - 1 = 10 (left: 8 10 10)\n10 - 8 = 2 (left: 2 10)\n2 * 10 = 20 (not enough, need to use all numbers effectively)\n11 - 1 = 10\n8 + 2 = 10\nNow combining:\n(11 - 1) + (10 / 5) * 8 = not valid since no 5\n\nFinal Correct Steps:\n11 - 1 = 10 (left: 8 10)\n10 - 8 = 2 (left: 2 10)\n10 / 2 = 5\nNow combining effectively:\n(11 - 1) + (10 / 2) * 8 - 8 = not valid, need right sequence\n\nCorrect Approach:\n11 - 1 = 10 (left: 8 10)\n10 - 8 = 2 (left: 2 10)\nNow using remaining effectively\n(10 + 10) - 8 * (11 - 1) / 8 = not valid\n\nFinal Correct Approach:\n(11 - 1) * (10 / 8) * 8 = 24 (left: 24)\n\nAnswer: ((11 - 1) * (10 / 8)) * 8 = 24",
+            "Steps:\n11 - 1 = 10 (left: 8 10 10)\n10 * 10 = 100 (left: 8 100)\n100 / 8 = 12.5 (This step is invalid as we need integers only, let's find another way)\n\nRevised Steps:\n10 - 8 = 2 (left: 1 2 11)\n2 * 11 = 22 (left: 1 22)\n22 + 1 = 23 (This is also not leading to 24, finding another valid sequence)\n\nRevised Steps:\n10 - 8 = 2 (left: 1 2 11)\n1 * 2 = 2 (left: 2 11 2)\n2 + 2 = 4 (left: 4 11)\n11 - 4 = 7 (This step is not leading to 24 either)\n\nRevised Steps:\n8 * (10 / 5) = 16 (Invalid as we don't have a '5' in the list, finding another way)\n\nValid Steps:\n(10 + 8) - 1 = 17\n17 - 11 = 6 (This is also not leading to 24 directly)\nFinding correct sequence:\n\nCorrect Sequence:\n11 - 1 = 10 (left: 8 10)\n10 * 2 = 20 (Invalid as we don't have a '2', finding another way)\n\nValid Steps:\n(11 - 1) = 10\n10 + 8 + 6 = 24 (We need to adjust, correct path is)\nCorrect Path:\n10 + 11 - 7 (Not possible without adjusting)\n\nFinal Valid Sequence:\n11 - 1 = 10 (left: 8 10)\n10 * 2 = 20\n20 + 4 (Adjusting Correctly)\n\nFinal Valid Answer:\n(11 - 1) + 10 + 3 = 24 (Finding Correct Adjustment)\n\nCorrect Final Sequence:\n(11 - 1) + 8 + 5 = Not Possible Direct\n\nFinal Correct Path Found:\n1 * 11 = 11\n10 + 11 - 7 = Not Possible\nCorrect Path:\n(11 - 1) + (10 / 2) = 24 Adjusting Correctly:\n\nFinal Valid Answer:\n((10 + 8) - 1) + 11 - 5 = 24\n\nCorrect Final Path:\n((11-1)+10)-8=24\nAnswer: ((11 - 1) + 10) - 8 = 24"
+        ],
+        "infos": [
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            }
+        ],
+        "usage_so_far": {
+            "completion_tokens": 13729,
+            "prompt_tokens": 36970,
+            "cost": 0.0
+        }
+    },
+    {
+        "idx": 907,
+        "ys": [
+            "Steps:\n9 - 6 = 3 (left: 2 3 3)\n3 * 3 = 9 (left: 2 9)\n9 + 2 = 11 (left: 11)\n11 + 11 - 8 = 24 (not possible with remaining numbers)\n\nCorrect approach:\n6 * 3 = 18 (left: 2 9 18)\n18 + 6 - 0 = 24 (not directly, need re-evaluation)\nRevised:\n9 - 3 = 6 (left: 2 6 6)\n6 * 4 = 24 (missing direct step)\n\nCorrect final:\n(9 - 3) * (6 / 2) = 24\nAnswer: ((9 - 3) * (6 / 2)) = 24",
+            "Steps:\n9 - 6 = 3 (left: 2 3 3)\n3 * 3 = 9 (left: 2 9)\n9 + 2 = 11 (not 24, need to reevaluate)\n3 * 2 = 6 (left: 3 6)\n6 * 4 = (need a 4, rework)\n9 - 3 = 6 (left: 2 6)\n6 * 2 + 3*2 = 18+6\nRevised:\n3 * 6 = 18 (left: 2 9)\n18 + 6 = 24 (left: 9)\nAnswer: ((9 - 3) * 2) + 6 = 24",
+            "Steps:\n9 - 6 = 3 (left: 2 3 3)\n3 * 3 = 9 (left: 2 9)\n9 + 2 = 11 (not 24, incorrect path)\nCorrecting the steps:\n6 * 2 = 12 (left: 3 9 12)\n12 + 3 = 15 (left: 9 15)\nIncorrect again, revisiting:\n9 - 3 = 6 (left: 2 6)\n6 * 4 = Not enough numbers\nRevisiting initial steps:\n3 * 6 = 18 (left: 2 9)\n18 + 6 incorrect path revisited correctly:\nCorrect approach:\n(9 - 3) * (6 / 2) = 24\nAnswer: (9 - 3) * (6 / 2) = 24",
+            "Steps:\n9 - 6 = 3 (left: 2 3 3)\n3 * 3 = 9 (left: 2 9)\n9 + 2 = 11 (not 24, need to adjust)\n3 * 2 = 6 (left: 3 6)\n6 * 4 = not possible with remaining\nRe-evaluate:\n9 - 3 = 6 (left: 2 6)\n6 * 4 = not directly but\n6 + 6 = 12 (if had another 6, aiming differently)\nCorrect approach:\n(9 - 3) * (6 / 2) = 24 (left: 3 24)\nAnswer: (9 - 3) * (6 / 2) = 24",
+            "Steps:\n9 - 6 = 3 (left: 2 3 3)\n3 * 3 = 9 (left: 2 9)\n9 + 2 = 11 (left: 11)\n11 + 11 - 8 = 14 (Invalid step, correct to:)\n9 + 2 = 11 (left: 11)\nCorrect sequence:\n3 * (9 - 6) = 9 (left: 2 9)\n9 + 2 + 3 = 14 (Invalid, correct to:)\n9 + 2 = 11 (left: 11)\nCorrect and valid final steps:\n3 * (9 - 6) = 9 (left: 2 9)\n9 + 2 + 3 = 14 (Incorrect, correct sequence is:)\n3 * (9 - 6) = 9\nFinal step should be:\n(3 * (9 - 6)) * (2 + 2) = 24 (Invalid number 2+2, Correct to)\nRevised and valid steps:\n3 * (9 - 6) = 9\nFinal correct sequence:\n(3 * (9 - 6)) * 8/2.5= 24 (Correct simplified directly)\nAnswer: 3 * (9 - 6) + 9 - 3 = 24",
+            "Steps:\n9 - 6 = 3 (left: 2 3 3)\n3 * 3 = 9 (left: 2 9)\n9 + 2 = 11 (not 24, incorrect path, re-evaluate)\n3 * 2 = 6 (left: 3 6)\n6 * 3 = 18 (not 24, incorrect path, re-evaluate)\n3 + 3 = 6 (left: 2 6)\n6 * 2 = 12 (not 24, incorrect path, re-evaluate)\n9 - 3 = 6 (left: 2 6)\n6 * 2 = 12 (not 24, incorrect path, re-evaluate)\n9 + 3 = 12 (left: 2 12)\n12 / 2 = 6 (not 24, incorrect path, re-evaluate)\n9 - 2 = 7 (left: 3 7)\n7 * 3 = 21 (not 24, incorrect path, re-evaluate)\n9 + 2 = 11 (left: 3 11)\n11 - 3 = 8 (left: 8)\n8 + 8 = 16 (incorrect target, start new evaluation)\n(9 - 3) * 2 = 12 (not 24, incorrect path)\n(9 - 2) * 3 = 21 (not 24, incorrect path)\nCorrect Path:\n6 * 3 = 18 (left: 2 9)\n18 + 6 = 24 (left: 9)\nAnswer: ((9 - 3) * 6) / (9 - 6) = 24",
+            "Steps:\n9 - 6 = 3 (left: 2 3 3)\n3 * 3 = 9 (left: 2 9)\n9 + 2 = 11 (not 24, retry with different operations)\n\n9 - 3 = 6 (left: 2 6)\n6 * 2 = 12 (not 24, retry with different operations)\n\n3 * 6 = 18 (left: 2 9)\n18 + 6 = 24 (realize previous was wrong approach, correct path is needed)\n\nCorrect Steps:\n3 * 6 = 18 (left: 2 9)\n18 + 6 = 24 incorrect step correction\n\nCorrect:\n3 * (9 - 2) = 21 (left: 6 21)\n21 + 3 = not correct path, re-evaluate\n\nFinal Correct Approach:\n(9 - 3) * (6 / 2) = 24\nAnswer: (9 - 3) * (6 / 2) = 24",
+            "Steps:\n9 - 6 = 3 (left: 2 3 3)\n3 * 3 = 9 (left: 2 9)\n9 + 2 = 11 (not 24, need to adjust)\n3 * 2 = 6 (left: 3 6)\n6 * 4 = 24 (no direct way with remaining, reassess previous)\n9 - 3 = 6 (left: 2 6)\n6 * 4 = no 4 available\nCorrect adjustment:\n3 * 8 = not enough, need exact path\nRevised correct:\n3 * 6 = 18 (left: 2 9)\n18 + 6 = adjust needed directly\nFinal direct:\n3 * 6 = 18 (left: 2 9)\n18 + 6 = missing setup again\nDirect hit final:\n(9 - 3) * (6 / 2) = 24 (correct approach)\nAnswer: (9 - 3) * (6 / 2) = 24",
+            "Steps:\n9 - 6 = 3 (left: 2 3 3)\n3 * 3 = 9 (left: 2 9)\n9 + 2 = 11 (left: 11)\n11 + 11 - 7 = not possible, adjust to correct steps\nCorrect Steps:\n3 * 3 = 9 (left: 2 6 9)\n9 + 9 - 6 = not direct, correct as:\n3 * (9 - 2) = 21, adjust for exact 24\nFinal Correct:\n(3 * (9 - 2)) + 5 = not in set, rework directly\nDirect Correct Steps:\n3 * (9 - 2) = 21,\nAdjust to fit: 21 + (6-3) = 24\nAnswer: 3 * (9 - 2) + (6 - 3) = 24",
+            "Steps:\n9 - 6 = 3 (left: 2 3 3)\n3 * 3 = 9 (left: 2 9)\n9 + 2 = 11 (not 24, try another approach)\n3 * 2 = 6 (left: 3 6)\n6 + 6 = 12 (not 24, try another approach)\n9 - 3 = 6 (left: 2 6)\n6 * 4 = not possible with remaining numbers\nReattempt:\n9 - 3 = 6 (left: 2 6)\n6 * 4 = not possible but notice missing direct operations, reframe\nCorrect Approach:\n9 - 3 = 6 (left: 2 6)\n6 * 4 = aim for forming 4 with remaining, hence\n(6 / 3) * (9 - 3) = 24 (left: 2)\nAnswer: ((6 / 3) * (9 - 3)) * 2 = 24 (adjust as valid direct formation)  \nFinal Correct:\n(9 - 3) * (6 / 3) = 24\nAnswer: (9 - 3) * (6 / 3) = 24"
+        ],
+        "infos": [
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            }
+        ],
+        "usage_so_far": {
+            "completion_tokens": 16076,
+            "prompt_tokens": 42240,
+            "cost": 0.0
+        }
+    },
+    {
+        "idx": 908,
+        "ys": [
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n4 * 1 = 4 (left: 3 4)\n4 + 3 = 7 (left: 7)\n7 + 17 = 24 (invalid step, correct as follows)\n4 * (9 - 5) = 16 (left: 1 3)\n16 + 8 = 24 (incorrect path, correct as follows)\n4 * (9 - 5) = 16 (left: 1 3)\n16 + (3 * 1) = 19 (incorrect path, correct solution needed)\n\nCorrect Solution:\nSteps:\n9 - 5 = 4 (left: 1 3 4)\n4 + 1 = 5 (left: 3 5)\n5 + 3 = 8 (left: 8)\n8 * 3 = 24 (left: 24)\nAnswer: 3 * (9 - 5 + 1) = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n4 * 1 = 4 (left: 3 4)\n4 + 3 = 7 (left: 7)\n7 + 17 = 24 (since we don't have 17, this step needs correction to fit within given numbers)\nCorrected:\n9 - 5 = 4 (left: 1 3 4)\n4 * (3 + 1) = 16 (left: 16)\n16 + 8 = 24 (realizing we need another approach as 8 is not available, let's fix)\nFinal Correct Approach:\n9 - 5 = 4 (left: 1 3 4)\n(4 * 3) + 12 = 24 (fixing to use directly possible numbers)\nCorrected and Simplified Directly Usable:\n9 - 1 = 8 (left: 3 5 8)\n8 * 3 = 24 (left: 5 24)\nAnswer: ((9 - 1) * 3) + 0 (since addition of zero doesn't change, simplifying to valid usable direct steps shown above directly fitting given numbers) \nSimplified Directly:\n(9-1)*3=24\nAnswer: (9 - 1) * 3 = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n4 * 1 = 4 (left: 3 4)\n4 + 3 = 7 (left: 7)\n7 + 9 - 2 = incorrect, adjust to correct path\n\nRevised Correct Path:\n9 - 5 = 4 (left: 1 3 4)\n4 * (9 - 5) = 16 (left: 1 3)\n16 - 4 = 12 (left: 3)\n12 + 3 - 1 = incorrect, revise\n\nFinal Correct:\n9 - 5 = 4 (left: 1 3 5)\n5 * (9 - 5) = 20 (left: 1 3)\n20 - 1 = 19 (incorrect, adjust)\n\nCorrect Final Steps:\n9 + 5 = 14 (left: 1 3 5)\n14 - 1 = 13 (left: 3 5)\n13 + 1 = 14 (not 24, revise)\n\nFinal Correct Path:\n(9 * 3) - 5 = 22\n22 - 1 = 21 (incorrect, adjust)\n\nCorrect Final Solution:\n(9 + 5) - 1 = 13\n13 + 3 = 16 (not 24, revise)\n\nFinal Correct Path:\n(9 * (5 / 5)) = 9\n9 * 3 - 1 = 24\n\nAnswer: ((9 * (5 / 5)) * 3) - 1 = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n4 * 1 = 4 (left: 3 4)\n4 + 3 = 7 (left: 7)\n7 + 17 = 24 (invalid step, correct approach needed)\nCorrect Approach:\n9 - 5 = 4 (left: 1 3 4)\n4 * (9 - 5) = 16 (left: 1 3)\n16 + 8 = 24 (incorrect, adjust)\nFinal Correct:\n(9 - 5) * 4 + 1 = 24 (left: 3)\nAnswer: ((9 - 5) * 4) + 1 = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n4 * 1 = 4 (left: 3 4)\n4 + 3 = 7 (left: 7)\n7 + 17 not possible with remaining numbers, re-evaluate simpler:\n9 - 3 = 6 (left: 1 5 6)\n6 * 4 not enough, correct approach:\n(9 - 1) = 8 (left: 3 5 8)\n8 + 16 not direct, simplify:\n5 + 1 = 6 (left: 3 6 9)\n6 * 4 not options left, recheck:\n9 - 5 = 4 (left: 1 3 4)\n(4 + 1) * (9 - 5) = 20 adjust:\nFinal correct:\n((9 - 1) * (5 - 3)) = 24\nAnswer: ((9 - 1) * (5 - 3)) = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n4 * 1 = 4 (left: 3 4)\n4 + 3 = 7 (left: 7)\n7 + 17 = 24 (invalid step, correct approach needed)\nCorrect Approach:\n9 - 5 = 4 (left: 1 3 4)\n4 * (9 - 5) = 16 (left: 1 3)\n16 + 8 = 24 (no 8 available, need adjustment)\nAdjustment:\n9 - 5 = 4 (left: 1 3 4)\n(9 - 5) * ((4 * 1) + 3) = 24 (correct calculation)\nAnswer: (9 - 5) * ((4 * 1) + 3) = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n4 * 6 = 24 (We need to get 6, but we have 1 and 3 left)\n3 + 1 = 4 (left: 4 4) \nNot possible with direct operations. Correct path:\n9 - 5 = 4 (left: 1 3 4)\n(1 + 3) * 4 = 24 (left: 24)\nAnswer: ((9 - 5) * (1 + 3)) = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n4 * 6 = 24 (missing step to get 6, correct approach needed)\n3 + 1 = 4 (left: 4 9)\n9 - 5 = 4 (left: 4 4)\n4 * (9 - 5) = 16 (incorrect, need direct path)\nCorrect Approach:\n9 - 1 = 8 (left: 3 5 8)\n5 + 3 = 8 (left: 8 8)\n8 * (8 / 8) = 8 (not correct, needs adjustment)\nFinal Correct:\n(9 - 1) * (5 + 3) / ((9-5)/4) = 24\nAnswer: (9 - 1) * (5 + 3) = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n4 * 1 = 4 (left: 3 4)\n4 + 3 = 7 (left: 7)\n7 * 3 = 21 (left: 3)\n21 + 3 = 24 (left: 24)\nAnswer: ((9 - 5) + 1) * 3 + 3 = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n4 * 1 = 4 (left: 3 4)\n4 + 3 = 7 (left: 7)\n7 + 17 = 24 (not possible with remaining numbers)\n\nCorrect approach:\n9 - 5 = 4 (left: 1 3 4)\n4 * 3 = 12 (left: 1 12)\n12 + 1 = 13 (incorrect, need to correct)\nRevised:\n9 - 1 = 8 (left: 3 5 8)\n8 + 5 = 13 (incorrect, need adjustment)\nCorrected:\n(9 - 1) * (5 / 5) = 8\nFinal step:\n8 * 3 = 24 (left: 24)\n\nAnswer: ((9 - 1) * (5 / 5)) * 3 = 24"
+        ],
+        "infos": [
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            }
+        ],
+        "usage_so_far": {
+            "completion_tokens": 18169,
+            "prompt_tokens": 47510,
+            "cost": 0.0
+        }
+    },
+    {
+        "idx": 909,
+        "ys": [
+            "Steps:\n12 / 3 = 4 (left: 3 4 7)\n7 - 3 = 4 (left: 4 4)\n4 * 4 = 16 (left: 16)\n16 + 8 = 24 (left: 24)\nAnswer: ((12 / 3) * (7 - 3)) + 8 = 24",
+            "Steps:\n12 / 3 = 4 (left: 3 4 7)\n7 - 3 = 4 (left: 4 4)\n4 * 4 = 16 (left: 16)\n16 + 8 = 24 (left: 24)\nAnswer: ((12 / 3) * (7 - 3)) + 8 = 24",
+            "Steps:\n12 / 3 = 4 (left: 3 4 7)\n7 - 3 = 4 (left: 4 4)\n4 * 4 = 16 (left: 16)\n16 + 8 = 24 (left: 24)\nAnswer: ((12 / 3) * (7 - 3)) + 8 = 24",
+            "Steps:\n12 / 3 = 4 (left: 3 4 7)\n3 * 4 = 12 (left: 7 12)\n7 + 12 = 19 (not 24, incorrect path)\nCorrect steps:\n3 * 7 = 21 (left: 21 3)\n21 + 3 = 24 (left: 24)\nAnswer: ((3 * 7) + 3) = 24",
+            "Steps:\n12 / 3 = 4 (left: 3 4 7)\n7 - 3 = 4 (left: 4 4)\n4 * 4 = 16 (left: 16)\n16 + 8 = 24 (left: 24)\nAnswer: ((12 / 3) * (7 - 3)) + 8 = 24",
+            "Steps:\n12 / 3 = 4 (left: 3 4 7)\n7 - 3 = 4 (left: 4 4)\n4 * 4 = 16 (left: 16)\n16 + 8 = 24 (wrong step, correct: use remaining numbers directly)\nCorrect Steps:\n12 / 3 = 4 (left: 3 4 7)\n7 - 3 = 4 (left: 4 4)\n4 * 4 = 16 (incorrect continuation, redo with valid path)\nRedo Correct:\n12 / 3 = 4 (left: 3 4 7)\n7 - 3 = 4 (left: 4 4)\nCorrect Final:\n(12 / 3) * (7 - 3) = 24\nAnswer: (12 / 3) * (7 - 3) = 24",
+            "Steps:\n12 / 3 = 4 (left: 3 4 7)\n7 - 3 = 4 (left: 4 4)\n4 * 4 = 16 (left: 16)\n16 + 8 = 24 (left: 24)\nAnswer: ((12 / 3) * (7 - 3)) + 8 = 24",
+            "Steps:\n12 / 3 = 4 (left: 3 4 7)\n7 - 3 = 4 (left: 4 4)\n4 * 4 = 16 (left: 16)\n16 - 4 = 12 (left: 12)\n12 + 12 = 24 (left: 24)\nAnswer: ((7 - 3) * 12 / 3) + 3 = 24",
+            "Steps:\n12 / 3 = 4 (left: 3 4 7)\n3 * 4 = 12 (left: 7 12)\n12 + 7 = 19 (not 24, need to re-evaluate)\n7 + 3 = 10 (left: 10 12)\n12 - 10 = 2 (left: 2 10)\n10 * 2 = 20 (not 24, continue evaluating)\n3 * 7 = 21 (left: 21 12)\n12 - 3 = 9 (left: 9 21)\n21 - 9 = 12\n12 + 12 = 24 (correct path found after re-evaluation)\nAnswer: ((3 * 7) + (12 - 3)) = 24",
+            "Steps:\n12 / 3 = 4 (left: 3 4 7)\n7 - 3 = 4 (left: 4 4)\n4 * 4 = 16 (left: 16)\n16 + 8 = 24 (not possible with remaining numbers)\n\nCorrect approach:\n12 / 3 = 4 (left: 3 4 7)\n3 * 7 = 21 (left: 21 4)\n21 + 3 = 24 (left: 24)\nAnswer: ((12 / 3) * 7) - 3 = 24"
+        ],
+        "infos": [
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            }
+        ],
+        "usage_so_far": {
+            "completion_tokens": 19375,
+            "prompt_tokens": 52790,
+            "cost": 0.0
+        }
+    }
+]

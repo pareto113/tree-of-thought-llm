@@ -1,0 +1,60 @@
+{
+  "source_log": "logs/game24/qwen2.5:14b-instruct_0.7_naive_standard_sample_1_start900_end903.json",
+  "n_puzzles": 3,
+  "format": {
+    "propose": {
+      "total": 0,
+      "empty": 0,
+      "fmt_ok": 0,
+      "fmt_ok_rate": null,
+      "math_ok": 0,
+      "math_ok_rate": null,
+      "math_errors": {}
+    },
+    "value": {
+      "total": 0,
+      "parseable": 0,
+      "parseable_rate": null,
+      "distribution": {}
+    }
+  },
+  "accuracy": {
+    "cnt_avg": 0.3333,
+    "cnt_any": 1,
+    "cnt_any_rate": 0.3333,
+    "per_puzzle": [
+      {
+        "idx": 900,
+        "input": "?",
+        "any": false,
+        "avg": 0.0,
+        "answers": [
+          "(10 - 6 + 4) * 5 = 24"
+        ]
+      },
+      {
+        "idx": 901,
+        "input": "?",
+        "any": false,
+        "avg": 0.0,
+        "answers": [
+          "(7 - 4) * (1 + 2) = 24"
+        ]
+      },
+      {
+        "idx": 902,
+        "input": "?",
+        "any": true,
+        "avg": 1.0,
+        "answers": [
+          "(11 - 5) * (8 / 2) = 24"
+        ]
+      }
+    ]
+  },
+  "usage": {
+    "completion_tokens": 55,
+    "prompt_tokens": 725,
+    "cost": 0.0
+  }
+}
