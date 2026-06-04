@@ -17,10 +17,11 @@ def _fmt_sec(sec: float) -> str:
 def run(args):
     task = get_task(args.task)
     logs, cnt_avg, cnt_any = [], 0, 0
+    backend = args.backend.replace(':', '_')  # Windows 파일명 호환 (콜론 금지)
     if args.naive_run:
-        file = f'./logs/{args.task}/{args.backend}_{args.temperature}_naive_{args.prompt_sample}_sample_{args.n_generate_sample}_start{args.task_start_index}_end{args.task_end_index}.json'
+        file = f'./logs/{args.task}/{backend}_{args.temperature}_naive_{args.prompt_sample}_sample_{args.n_generate_sample}_start{args.task_start_index}_end{args.task_end_index}.json'
     else:
-        file = f'./logs/{args.task}/{args.backend}_{args.temperature}_{args.method_generate}{args.n_generate_sample}_{args.method_evaluate}{args.n_evaluate_sample}_{args.method_select}{args.n_select_sample}_start{args.task_start_index}_end{args.task_end_index}.json'
+        file = f'./logs/{args.task}/{backend}_{args.temperature}_{args.method_generate}{args.n_generate_sample}_{args.method_evaluate}{args.n_evaluate_sample}_{args.method_select}{args.n_select_sample}_start{args.task_start_index}_end{args.task_end_index}.json'
     os.makedirs(os.path.dirname(file), exist_ok=True)
 
     total = args.task_end_index - args.task_start_index
