@@ -79,6 +79,45 @@ The very simple ``run.py`` implements the ToT + BFS algorithm, as well as the na
 
 
 
+## Local Experiment Branches
+
+This fork provides two branches for running experiments without the original GPT-4 setup.
+
+### `feature/ollama-qwen` — Local model via Ollama (free, no API key)
+
+Requires [Ollama](https://ollama.com) running locally with `qwen2.5:14b-instruct` pulled.
+
+```bash
+git checkout feature/ollama-qwen
+source .venv-ollama/bin/activate  # create once: python3 -m venv .venv-ollama && pip install -r requirements.txt -e .
+
+# example: Game of 24 ToT
+python run.py --task game24 --task_start_index 900 --task_end_index 910 \
+    --method_generate propose --method_evaluate value --method_select greedy \
+    --n_evaluate_sample 3 --n_select_sample 5
+
+# example: naive CoT baseline
+python run.py --task game24 --task_start_index 900 --task_end_index 910 \
+    --naive_run --prompt_sample cot --n_generate_sample 3
+```
+
+### `feature/gpt4o-mini` — GPT-4o mini via OpenAI API
+
+```bash
+git checkout feature/gpt4o-mini
+source .venv-gpt4o/bin/activate  # create once: python3 -m venv .venv-gpt4o && pip install -r requirements.txt -e .
+export OPENAI_API_KEY="sk-..."
+
+# example: Game of 24 ToT (~$0.54 per 100 puzzles)
+python run.py --task game24 --task_start_index 900 --task_end_index 910 \
+    --method_generate propose --method_evaluate value --method_select greedy \
+    --n_evaluate_sample 3 --n_select_sample 5
+
+# example: naive CoT baseline
+python run.py --task game24 --task_start_index 900 --task_end_index 910 \
+    --naive_run --prompt_sample cot --n_generate_sample 3
+```
+
 ## Paper Trajectories
 ``logs/`` contains all the trajectories from the paper's experiments, except for ``logs/game24/gpt-4_0.7_propose1_value3_greedy5_start900_end1000.json`` which was reproduced after the paper (as the original experiment was done in a notebook) and achieved a 69\% score instead of the original 74\% score due to randomness in GPT decoding. We hope to aggregate multiple runs in the future to account for sampling randomness and update the paper, but this shouldn't affect the main conclusions of the paper.
 
