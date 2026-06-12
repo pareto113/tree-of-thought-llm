@@ -164,6 +164,40 @@ python run.py ... --n_select_sample 4 ...
 
 ---
 
+## 추가 실험 (논문 외)
+
+> 논문 발표(2023) 이후 등장한 OpenAI reasoning 모델을 활용한 확장 실험.  
+> 핵심 질문: **"외부 구조(ToT) 없이 내부 추론 모델만으로 ToT를 이길 수 있는가?"**  
+> 결정 근거: ADR-0005 참조.
+
+### 9. o4-mini — IO×1 (추가 실험)
+
+o4-mini는 답변 전 내부 chain-of-thought를 수행하는 reasoning 모델이다.  
+단일 IO 프롬프트만으로 GPT-4o mini ToT b=5와 비교한다.
+
+| 항목 | 값 |
+|------|-----|
+| 모델 | `o4-mini` |
+| 방법 | IO (standard prompt, 단일 샘플) |
+| 비교 대상 | GPT-4o mini ToT b=5 |
+| 예상 비용 | ~$0.40 |
+
+> **o1을 쓰지 않는 이유**: o1은 비용 ~$12, n>1 미지원. o4-mini는 ~$0.40, n>1 지원, reasoning tokens 효율 우수 (832 vs 2000+).
+
+```bash
+# models.py에 o4-mini 분기 추가 후 실행
+python run.py \
+  --task game24 \
+  --backend o4-mini \
+  --naive_run \
+  --prompt_sample standard \
+  --n_generate_sample 1 \
+  --task_start_index 900 \
+  --task_end_index 1000
+```
+
+---
+
 ## 논문 GPT-4 baseline (비교 기준)
 
 | 방법 | 성공률 (Table 2) |
@@ -204,6 +238,7 @@ python run.py ... --n_select_sample 4 ...
 - [ ] 실험 6: ToT (b=5)
 - [ ] 실험 7: ToT (b=1)
 - [ ] 실험 8: ToT (b=2, 3, 4)
+- [ ] 실험 9: o4-mini IO×1 (추가 실험)
 - [ ] Table 2 집계
 - [ ] Figure 3(a)(b) 데이터 집계
 - [ ] Table 7 비용 집계
