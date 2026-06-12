@@ -275,7 +275,7 @@ def evaluate(log_path: str, save: bool = False):
 
     print(f"\n  cnt_avg (평균 정답률):    {cnt_avg/n_puzzles:.3f}")
     print(f"  cnt_any (1개 이상 정답):  {cnt_any}/{n_puzzles} = {cnt_any/n_puzzles*100:.0f}%")
-    print(f"  cnt_sc  (CoT-SC 과반수):  {cnt_sc}/{n_puzzles} = {cnt_sc/n_puzzles*100:.0f}%")
+    print(f"  cnt_sc  (CoT-SC 최다득표): {cnt_sc}/{n_puzzles} = {cnt_sc/n_puzzles*100:.0f}%")
 
     usage = data[-1].get('usage_so_far', {})
     if usage:
