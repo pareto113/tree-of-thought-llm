@@ -1,5 +1,11 @@
 {
   "source_log": "logs/game24/qwen2.5_14b-instruct_0.7_propose1_value3_greedy5_start900_end903.json",
+  "meta": {
+    "model": "qwen2.5_14b-instruct",
+    "temperature": 0.7,
+    "method": "propose1_value3_greedy5",
+    "puzzle_range": "900-902"
+  },
   "n_puzzles": 3,
   "format": {
     "propose": {
@@ -45,6 +51,13 @@
         "input": "4 5 6 10",
         "any": false,
         "avg": 0.0,
+        "accs": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "answers": [
           "4 * 6 = 24 (left: 24)",
           "4 * 6 = 24 (left: 24)",
@@ -58,6 +71,13 @@
         "input": "1 2 4 7",
         "any": false,
         "avg": 0.0,
+        "accs": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "answers": [
           "12 + 12 = 24 (left: 24)",
           "36 / 3 = 12 (left: 12)",
@@ -71,6 +91,13 @@
         "input": "2 5 8 11",
         "any": true,
         "avg": 0.2,
+        "accs": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
         "answers": [
           "Answer: (11 - 5) * (8 / 2) = 24",
           "360 / 2 = 180 (left: 180)",

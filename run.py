@@ -16,19 +16,31 @@ def _fmt_sec(sec: float) -> str:
 
 def run(args):
     task = get_task(args.task)
-    logs, cnt_avg, cnt_any = [], 0, 0
-    backend = args.backend.replace(':', '_')  # Windows 파일명 호환 (콜론 금지)
+    backend = args.backend
     if args.naive_run:
         file = f'./logs/{args.task}/{backend}_{args.temperature}_naive_{args.prompt_sample}_sample_{args.n_generate_sample}_start{args.task_start_index}_end{args.task_end_index}.json'
     else:
         file = f'./logs/{args.task}/{backend}_{args.temperature}_{args.method_generate}{args.n_generate_sample}_{args.method_evaluate}{args.n_evaluate_sample}_{args.method_select}{args.n_select_sample}_start{args.task_start_index}_end{args.task_end_index}.json'
     os.makedirs(os.path.dirname(file), exist_ok=True)
 
+    # resume: 기존 로그 로드 및 완료된 idx 복원
+    if os.path.exists(file) and os.path.getsize(file) > 0:
+        with open(file) as f:
+            logs = json.load(f)
+        done = {entry['idx'] for entry in logs}
+        cnt_avg = sum(sum(info['r'] for info in entry['infos']) / len(entry['infos']) for entry in logs)
+        cnt_any = sum(any(info['r'] for info in entry['infos']) for entry in logs)
+        print(f"[resume] 기존 로그 로드: {len(done)}개 퍼즐 완료, 재개합니다.\n")
+    else:
+        logs, done, cnt_avg, cnt_any = [], set(), 0, 0
+
     total = args.task_end_index - args.task_start_index
     run_start = time.time()
     puzzle_times = []
 
     for i in range(args.task_start_index, args.task_end_index):
+        if i in done:
+            continue
         puzzle_start = time.time()
 
         # solve
@@ -48,8 +60,8 @@ def run(args):
         # timing
         elapsed_puzzle = time.time() - puzzle_start
         puzzle_times.append(elapsed_puzzle)
-        completed = len(puzzle_times)
-        avg_per_puzzle = sum(puzzle_times) / completed
+        completed = len(done) + len(puzzle_times)
+        avg_per_puzzle = sum(puzzle_times) / len(puzzle_times)
         remaining = total - completed
         eta = avg_per_puzzle * remaining
         total_elapsed = time.time() - run_start
@@ -73,7 +85,7 @@ def run(args):
 
 def parse_args():
     args = argparse.ArgumentParser()
-    args.add_argument('--backend', type=str, choices=['qwen2.5:14b-instruct'], default='qwen2.5:14b-instruct')
+    args.add_argument('--backend', type=str, choices=['gpt-4o-mini', 'gpt-4o', 'gpt-4', 'gpt-3.5-turbo'], default='gpt-4o-mini')
     args.add_argument('--temperature', type=float, default=0.7)
 
     args.add_argument('--task', type=str, required=True, choices=['game24', 'text', 'crosswords'])

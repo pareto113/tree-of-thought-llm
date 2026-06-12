@@ -16,6 +16,44 @@ import argparse
 from collections import defaultdict
 
 
+def _parse_filename_meta(log_path: str) -> dict:
+    """파일명에서 모델·온도·방법·퍼즐 범위를 추출한다."""
+    stem = os.path.splitext(os.path.basename(log_path))[0]
+    parts = stem.split('_')
+
+    # 첫 번째 float 값이 temperature
+    temp_idx = None
+    for i, p in enumerate(parts):
+        try:
+            float(p)
+            temp_idx = i
+            break
+        except ValueError:
+            continue
+
+    if temp_idx is None:
+        return {}
+
+    model = '_'.join(parts[:temp_idx])
+    temperature = float(parts[temp_idx])
+
+    start, end, method_parts = None, None, []
+    for p in parts[temp_idx + 1:]:
+        if p.startswith('start'):
+            start = int(p[5:])
+        elif p.startswith('end'):
+            end = int(p[3:])
+        else:
+            method_parts.append(p)
+
+    return {
+        'model':         model,
+        'temperature':   temperature,
+        'method':        '_'.join(method_parts),
+        'puzzle_range':  f'{start}-{end - 1}' if start is not None and end is not None else '?',
+    }
+
+
 # ── 형식 검사 헬퍼 ────────────────────────────────────────────────
 
 PROPOSE_RE = re.compile(
@@ -239,6 +277,7 @@ def evaluate(log_path: str, save: bool = False):
     # ── JSON 저장 ─────────────────────────────────────────────────
     eval_data = {
         'source_log': log_path,
+        'meta':       _parse_filename_meta(log_path),
         'n_puzzles':  n_puzzles,
         'format': {
             'propose': {
@@ -261,7 +300,7 @@ def evaluate(log_path: str, save: bool = False):
             'cnt_avg':  round(cnt_avg / n_puzzles, 4),
             'cnt_any':  cnt_any,
             'cnt_any_rate': round(cnt_any / n_puzzles, 4),
-            'per_puzzle': [{k: v for k, v in r.items() if k != 'accs'} for r in results],
+            'per_puzzle': results,
         },
         'usage': usage,
     }

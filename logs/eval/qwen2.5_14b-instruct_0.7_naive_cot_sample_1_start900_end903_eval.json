@@ -1,5 +1,11 @@
 {
   "source_log": "logs/game24/qwen2.5_14b-instruct_0.7_naive_cot_sample_1_start900_end903.json",
+  "meta": {
+    "model": "qwen2.5_14b-instruct",
+    "temperature": 0.7,
+    "method": "naive_cot_sample_1",
+    "puzzle_range": "900-902"
+  },
   "n_puzzles": 3,
   "format": {
     "propose": {
@@ -28,6 +34,9 @@
         "input": "?",
         "any": false,
         "avg": 0.0,
+        "accs": [
+          0
+        ],
         "answers": [
           "Answer: 6 * (10 - 4) = 24"
         ]
@@ -37,6 +46,9 @@
         "input": "?",
         "any": false,
         "avg": 0.0,
+        "accs": [
+          0
+        ],
         "answers": [
           "Answer: ((7 - 1) * (4 + 2)) / ((4 + 2) - 4) = 24"
         ]
@@ -46,6 +58,9 @@
         "input": "?",
         "any": false,
         "avg": 0.0,
+        "accs": [
+          0
+        ],
         "answers": [
           "Answer: 6 * ((11 - 5) + (8 - 2)) = 24"
         ]
