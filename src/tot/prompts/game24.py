@@ -48,7 +48,7 @@ Answer: ((5 + 5) + 5) + 9 = 24
 Input: {input}
 '''
 
-# 1-shot
+# 3-shot (4수→3수, 3수→2수, 2수→1수 각 단계 예시 포함)
 propose_prompt = '''Input: 2 8 8 14
 Possible next steps:
 2 + 8 = 10 (left: 8 10 14)
@@ -57,8 +57,25 @@ Possible next steps:
 2 * 8 = 16 (left: 8 14 16)
 8 - 2 = 6 (left: 6 8 14)
 14 - 8 = 6 (left: 2 6 8)
-14 /  2 = 7 (left: 7 8 8)
+14 / 2 = 7 (left: 7 8 8)
 14 - 2 = 12 (left: 8 8 12)
+Input: 4 6 8
+Possible next steps:
+4 + 6 = 10 (left: 8 10)
+4 + 8 = 12 (left: 6 12)
+6 + 8 = 14 (left: 4 14)
+8 - 6 = 2 (left: 2 4)
+8 - 4 = 4 (left: 4 6)
+4 * 6 = 24 (left: 8 24)
+4 * 8 = 32 (left: 6 32)
+8 / 4 = 2 (left: 2 6)
+Input: 3 8
+Possible next steps:
+3 + 8 = 11 (left: 11)
+8 - 3 = 5 (left: 5)
+3 * 8 = 24 (left: 24)
+8 / 3 = 2.67 (left: 2.67)
+3 - 8 = -5 (left: -5)
 Input: {input}
 Possible next steps:
 '''

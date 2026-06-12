@@ -16,8 +16,11 @@ GPT-4 대비 GPT-4o mini에서 IO / CoT / ToT 방법론의 성능 차이를 비�
 | 태스크 | Game24 (puzzles 900–999, 100개) | Game24 (puzzles 901–1000, 100개) |
 | 온도 | 0.7 | 0.7 |
 | 시스템 프롬프트 | `"You are a concise assistant. Follow the output format shown in the examples exactly. Do not add explanations, numbered lists, markdown, or any text beyond what the format requires."` | 없음 (논문에 언급 없음) |
+| ToT propose_prompt | 3-shot (4수→3수, 3수→2수, 2수→1수 예시) | 1-shot (4수→3수만) |
 
-> **주의**: 시스템 프롬프트는 gpt-4o-mini의 markdown/LaTeX 출력을 방지하기 위해 추가된 것으로, 논문 원본 조건과 다르다. 이로 인해 결과 차이가 발생할 수 있음.
+> **주의**: 시스템 프롬프트 및 propose_prompt는 gpt-4o-mini 대응을 위해 논문 원본 조건과 다르다.
+> - 시스템 프롬프트: markdown/LaTeX 출력 방지 목적
+> - propose_prompt 3-shot: 1-shot에서 `left:` 추적 오류로 0% 기록 → GPT-3.5와 동일한 이유로 변경 (논문 Appendix B.2, ADR-0006)
 
 ---
 
