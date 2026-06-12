@@ -1,0 +1,116 @@
+{
+  "source_log": "logs/game24/qwen2.5_14b-instruct_0.7_propose1_value3_greedy5_start900_end903.json",
+  "meta": {
+    "model": "qwen2.5_14b-instruct",
+    "temperature": 0.7,
+    "method": "propose1_value3_greedy5",
+    "puzzle_range": "900-902"
+  },
+  "n_puzzles": 3,
+  "format": {
+    "propose": {
+      "total": 185,
+      "empty": 0,
+      "fmt_ok": 159,
+      "fmt_ok_rate": 0.8595,
+      "math_ok": 122,
+      "math_ok_rate": 0.7673,
+      "math_errors": {
+        "left 오류 (기대:[5.0, 10.0, 24.0] 실제:[5.0, 9.0, 10.0])": 1,
+        "left 오류 (기대:[4.0, 10.0, 11.0] 실제:[4.0, 9.0, 10.0])": 1,
+        "left 오류 (기대:[2.0, 4.0, 6.0] 실제:[2.0, 6.0, 9.0])": 1,
+        "left 오류 (기대:[2.0, 5.0, 10.0] 실제:[2.0, 5.0, 9.0])": 1,
+        "left 오류 (기대:[4.0, 5.0, 16.0] 실제:[4.0, 5.0, 9.0])": 1,
+        "left 오류 (기대:[5.0, 6.0, 40.0] 실제:[5.0, 6.0, 9.0])": 1,
+        "입력 숫자 불일치": 27,
+        "수식 오류": 1,
+        "left 오류 (기대:[6.0, 10.0] 실제:[5.0, 6.0, 10.0])": 1,
+        "left 오류 (기대:[1.0, 5.0] 실제:[1.0, 5.0, 10.0])": 1,
+        "left 오류 (기대:[2.0] 실제:[2.0, 4.0])": 1
+      }
+    },
+    "value": {
+      "total": 185,
+      "parseable": 145,
+      "parseable_rate": 0.7838,
+      "distribution": {
+        "likely": 41,
+        "mixed": 87,
+        "sure": 17,
+        "파싱실패(0점)": 40
+      }
+    }
+  },
+  "accuracy": {
+    "cnt_avg": 0.0667,
+    "cnt_any": 1,
+    "cnt_any_rate": 0.3333,
+    "per_puzzle": [
+      {
+        "idx": 900,
+        "input": "4 5 6 10",
+        "any": false,
+        "avg": 0.0,
+        "accs": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "answers": [
+          "4 * 6 = 24 (left: 24)",
+          "4 * 6 = 24 (left: 24)",
+          "Answer: ((10 / 5) * (6 - 4)) * 4 = 24",
+          "Answer: 6 * 4 + 5 + 9 - 10 = 24",
+          "6 * 4 = 24 (left: 5 10)"
+        ]
+      },
+      {
+        "idx": 901,
+        "input": "1 2 4 7",
+        "any": false,
+        "avg": 0.0,
+        "accs": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "answers": [
+          "12 + 12 = 24 (left: 24)",
+          "36 / 3 = 12 (left: 12)",
+          "12 * 12 = 144 (left: 144)",
+          "12 / 12 = 1 (left: 1)",
+          "12 - 12 = 0 (left: 0)"
+        ]
+      },
+      {
+        "idx": 902,
+        "input": "2 5 8 11",
+        "any": true,
+        "avg": 0.2,
+        "accs": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "answers": [
+          "Answer: (11 - 5) * (8 / 2) = 24",
+          "360 / 2 = 180 (left: 180)",
+          "360 * 2 = 720 (left: 720)",
+          "4 + 4 = 8 (left: 8)",
+          "1 + 40 = 41 (left: 41)"
+        ]
+      }
+    ]
+  },
+  "usage": {
+    "completion_tokens": 14738,
+    "prompt_tokens": 186842,
+    "cost": 0.0
+  }
+}

@@ -1,0 +1,50 @@
+[
+    {
+        "idx": 900,
+        "ys": [
+            "Steps:\n10 - 6 = 4 (left: 4 4 5)\n4 * 4 = 16 (left: 5 16)\n16 + 8 = 24 (not possible with remaining numbers, recalculate)\n5 + 4 = 9 (left: 4 9)\n9 + 4 = 13 (left: 13)\n10 - 4 = 6 (left: 6 13)\n13 - 5 = 8 (left: 6 8)\n6 * 4 = 24 (left: 24)\nAnswer: 6 * (10 - 4) = 24"
+        ],
+        "infos": [
+            {
+                "r": 0
+            }
+        ],
+        "usage_so_far": {
+            "completion_tokens": 151,
+            "prompt_tokens": 528,
+            "cost": 0.0
+        }
+    },
+    {
+        "idx": 901,
+        "ys": [
+            "Steps:\n7 - 1 = 6 (left: 2 4 6)\n4 + 2 = 6 (left: 6 6)\n6 * 6 / 6 = 6 (left: 6)\n6 * 4 = 24 (left: 24)\nAnswer: ((7 - 1) * (4 + 2)) / ((4 + 2) - 4) = 24"
+        ],
+        "infos": [
+            {
+                "r": 0
+            }
+        ],
+        "usage_so_far": {
+            "completion_tokens": 247,
+            "prompt_tokens": 1055,
+            "cost": 0.0
+        }
+    },
+    {
+        "idx": 902,
+        "ys": [
+            "Steps:\n11 - 5 = 6 (left: 2 6 8)\n8 - 2 = 6 (left: 6 6)\n6 * 6 = 36 (left: 36)\n36 - 12 = 24 (Incorrect, need to adjust)\n8 + 2 = 10 (left: 5 10 11)\n11 - 5 = 6 (left: 6 10)\n10 - 6 = 4 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: 6 * ((11 - 5) + (8 - 2)) = 24"
+        ],
+        "infos": [
+            {
+                "r": 0
+            }
+        ],
+        "usage_so_far": {
+            "completion_tokens": 406,
+            "prompt_tokens": 1583,
+            "cost": 0.0
+        }
+    }
+]

@@ -1,0 +1,213 @@
+{
+  "source_log": "logs/game24/qwen2.5_14b-instruct_0.7_naive_cot_sample_10_start900_end910.json",
+  "n_puzzles": 10,
+  "format": {
+    "propose": {
+      "total": 0,
+      "empty": 0,
+      "fmt_ok": 0,
+      "fmt_ok_rate": null,
+      "math_ok": 0,
+      "math_ok_rate": null,
+      "math_errors": {}
+    },
+    "value": {
+      "total": 0,
+      "parseable": 0,
+      "parseable_rate": null,
+      "distribution": {}
+    }
+  },
+  "accuracy": {
+    "cnt_avg": 0.07,
+    "cnt_any": 4,
+    "cnt_any_rate": 0.4,
+    "per_puzzle": [
+      {
+        "idx": 900,
+        "input": "?",
+        "any": true,
+        "avg": 0.2,
+        "answers": [
+          "Answer: 4 * 6 = 24",
+          "Answer: (10 - 4) * (6 / 2) = 24",
+          "Answer: ((10 - 4) * 5) - 6 = 24",
+          "Answer: ((10 - 6) * 5) + 4 = 24",
+          "(10 - 4) * 6 / (5/5) = 24",
+          "Answer: ((10 - 4) * 6) / 6 * 4 = 24",
+          "Answer: 4 * ((10 - 4) * (6 / 6)) = 24",
+          "Answer: ((5 * 6) - 6) = 24 (Note: Corrected to fit remaining numbers directly)",
+          "Answer: ((10 - 4) * 6) - 6 = 24",
+          "Answer: 4 * ((10 - 4) * (6 / 6)) = 24"
+        ]
+      },
+      {
+        "idx": 901,
+        "input": "?",
+        "any": false,
+        "avg": 0.0,
+        "answers": [
+          "Answer: ((7 - 1) * (4 + 2)) / ((4 + 2) - 4) = 24",
+          "Answer: ((7 - 1) * (4 + 2)) / ((4 + 2) - 4) = 24",
+          "Answer: ((7 - 1) * (4 + 2)) / ((4 + 2) - 4) = 24",
+          "Answer: ((7 - 1) * (4 + 2)) / ((4 + 2) - 4) = 24",
+          "Answer: ((7 - 1) * (4 + 2)) / (4 + 2) * 4 = 24",
+          "Answer: (7 - 4) * (1 + 2) * 4 = 24",
+          "Answer: (7 - 1) * (4 + 2) = 24",
+          "Answer: ((7 - 4) * 2) * 4 = 24",
+          "Answer: ((7 - 4) * 2) * 4 = 24",
+          "Answer: ((7 - 1) * (4 + 2)) / ((4 + 2) - 4) = 24"
+        ]
+      },
+      {
+        "idx": 902,
+        "input": "?",
+        "any": true,
+        "avg": 0.2,
+        "answers": [
+          "Answer: ((11 - 5) * 5) - (8 - 2) = 24",
+          "Answer: ((11 - 5) * (8 / 2)) = 24",
+          "Answer: ((8 - 2) * 5) - (8 - 2) = 24",
+          "Answer: ((8 + 5) + (11 - 2)) + 2 = 24",
+          "Answer: ((11 - 5) * (8 - 2)) / 2 = 24",
+          "Answer: ((11 - 5) * (8 / 2)) = 24",
+          "Answer: ((11 - 5) - (8 - 5)) * (2 * (11 - 8)) = 24",
+          "Answer: (11 - 5) * (8 - 2) = 24",
+          "Answer: ((11 - 5) * (8 - 2)) = 24",
+          "Answer: ((8 - 2) * (11 - 5)) * 2 = 24"
+        ]
+      },
+      {
+        "idx": 903,
+        "input": "?",
+        "any": false,
+        "avg": 0.0,
+        "answers": [
+          "Answer: ((13 - 4) * 3) - 3 = 24",
+          "Answer: (13 - 4) * (4 + 3) = 24",
+          "(13 - 4) + (9 - 3) * 4 = 24",
+          "Answer: ((13 - 4) * 3) - 3 = 24 (correct simplified: (13-4)*3=27, adjust to fit 24 directly)",
+          "Answer: ((13 - 3) * 4) / (13 - 9) = 24",
+          "Answer: ((13 - 4) + 3) * 4 / 4 = 24 (simplifying redundant division)",
+          "Answer: ((13 - 4) * 4) / 2 = 24",
+          "Answer: ((13 - 4) * 4 / 3) + 3 = 24",
+          "Answer: (13 - 4) * 4 - 4 = 24",
+          "Answer: ((13 - 4) * 3) - 3 = 24"
+        ]
+      },
+      {
+        "idx": 904,
+        "input": "?",
+        "any": true,
+        "avg": 0.1,
+        "answers": [
+          "Answer: ((9 - 7) * 8) + 8 = 24",
+          "Answer: ((9 - 7) * 8) + 8 = 24",
+          "Answer: 7 * (9 / (8 - 6)) = 24",
+          "Answer: ((8 - 6) * 9) + 7 = 24",
+          "Answer: ((8 * (9 - 7)) + 8) = 24",
+          "Answer: (8 + 6) + (9 - 7) = 24",
+          "Answer: ((8 - (9 - 6)) * (8 - (7 - 5))) + 8 = 24",
+          "Answer: ((9 - 7) * 8) + 8 = 24",
+          "Answer: 6 * (8 / (9 - 7)) = 24",
+          "Answer: ((9 - 6) * 7) - 8 = 24"
+        ]
+      },
+      {
+        "idx": 905,
+        "input": "?",
+        "any": false,
+        "avg": 0.0,
+        "answers": [
+          "Answer: ((11 - 1) + (13 - 11)) + 10 = 24",
+          "Answer: ((13 - 11) + 11) + 11 = 24",
+          "Answer: ((13 - 11) + 11) + 11 = 24",
+          "Answer: ((11 - 1) * 2) + 2 = 24",
+          "Answer: ((11 - 1) + 11) + (11 - 1) = 24 (adjust to fit exact steps shown format correctly)",
+          "Answer: (13 + 11) + 1 = 24",
+          "Answer: ((13 - 1) * (11 / 11)) * 2 = 24",
+          "Answer: 11 * (13 - 1) / 1 = 24",
+          "Answer: ((11 - 1) + (13 - 11)) * ((11 - 1) + 2) = 24",
+          "Answer: 11 * (13 - 1) / 1 = 24"
+        ]
+      },
+      {
+        "idx": 906,
+        "input": "?",
+        "any": true,
+        "avg": 0.2,
+        "answers": [
+          "Answer: (11 - 1) * (10 / 2) = 24",
+          "Answer: (11 - 1) * (10 / (10 - 8)) = 24",
+          "Answer: ((11 - (10 - 8)) * (11 + 1)) = 24",
+          "Answer: ((11 - 1) * (10 / 2)) = 24",
+          "Answer: ((11 - 1) * (10 / 5)) * 8 = 24",
+          "Answer: ((11 - 1) + (10 - 8)) * 2 = 24",
+          "Answer: ((10 - 8) * (11 + 1)) = 24",
+          "Answer: ((11 + 1) * (10 - 8)) = 24",
+          "Answer: ((11 - 1) * (10 / 8)) * 8 = 24",
+          "Answer: ((11 - 1) + 10) - 8 = 24"
+        ]
+      },
+      {
+        "idx": 907,
+        "input": "?",
+        "any": false,
+        "avg": 0.0,
+        "answers": [
+          "Answer: ((9 - 3) * (6 / 2)) = 24",
+          "Answer: ((9 - 3) * 2) + 6 = 24",
+          "Answer: (9 - 3) * (6 / 2) = 24",
+          "Answer: (9 - 3) * (6 / 2) = 24",
+          "Answer: 3 * (9 - 6) + 9 - 3 = 24",
+          "Answer: ((9 - 3) * 6) / (9 - 6) = 24",
+          "Answer: (9 - 3) * (6 / 2) = 24",
+          "Answer: (9 - 3) * (6 / 2) = 24",
+          "Answer: 3 * (9 - 2) + (6 - 3) = 24",
+          "Answer: (9 - 3) * (6 / 3) = 24"
+        ]
+      },
+      {
+        "idx": 908,
+        "input": "?",
+        "any": false,
+        "avg": 0.0,
+        "answers": [
+          "Answer: 3 * (9 - 5 + 1) = 24",
+          "Answer: (9 - 1) * 3 = 24",
+          "Answer: ((9 * (5 / 5)) * 3) - 1 = 24",
+          "Answer: ((9 - 5) * 4) + 1 = 24",
+          "Answer: ((9 - 1) * (5 - 3)) = 24",
+          "Answer: (9 - 5) * ((4 * 1) + 3) = 24",
+          "Answer: ((9 - 5) * (1 + 3)) = 24",
+          "Answer: (9 - 1) * (5 + 3) = 24",
+          "Answer: ((9 - 5) + 1) * 3 + 3 = 24",
+          "Answer: ((9 - 1) * (5 / 5)) * 3 = 24"
+        ]
+      },
+      {
+        "idx": 909,
+        "input": "?",
+        "any": false,
+        "avg": 0.0,
+        "answers": [
+          "Answer: ((12 / 3) * (7 - 3)) + 8 = 24",
+          "Answer: ((12 / 3) * (7 - 3)) + 8 = 24",
+          "Answer: ((12 / 3) * (7 - 3)) + 8 = 24",
+          "Answer: ((3 * 7) + 3) = 24",
+          "Answer: ((12 / 3) * (7 - 3)) + 8 = 24",
+          "Answer: (12 / 3) * (7 - 3) = 24",
+          "Answer: ((12 / 3) * (7 - 3)) + 8 = 24",
+          "Answer: ((7 - 3) * 12 / 3) + 3 = 24",
+          "Answer: ((3 * 7) + (12 - 3)) = 24",
+          "Answer: ((12 / 3) * 7) - 3 = 24"
+        ]
+      }
+    ]
+  },
+  "usage": {
+    "completion_tokens": 19375,
+    "prompt_tokens": 52790,
+    "cost": 0.0
+  }
+}
