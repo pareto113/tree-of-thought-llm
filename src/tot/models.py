@@ -4,6 +4,14 @@ import openai
 
 _client = openai.OpenAI()  # reads OPENAI_API_KEY from env
 
+# 형식 강제용 시스템 프롬프트 — GPT-4o mini가 few-shot 형식을 이탈해 번호 목록·마크다운을
+# 추가하는 현상을 막는다. Qwen용 언어 지시와 달리 형식 준수만을 목적으로 한다.
+_SYSTEM_PROMPT = (
+    "You are a concise assistant. "
+    "Follow the output format shown in the examples exactly. "
+    "Do not add explanations, numbered lists, markdown, or any text beyond what the format requires."
+)
+
 completion_tokens = prompt_tokens = 0
 
 # gpt-4o-mini pricing (per 1M tokens)
@@ -25,7 +33,10 @@ def _create(**kwargs) -> openai.types.chat.ChatCompletion:
 
 
 def gpt(prompt, model="gpt-4o-mini", temperature=0.7, max_tokens=1000, n=1, stop=None) -> list:
-    messages = [{"role": "user", "content": prompt}]
+    messages = [
+        {"role": "system", "content": _SYSTEM_PROMPT},
+        {"role": "user", "content": prompt},
+    ]
     return chatgpt(messages, model=model, temperature=temperature, max_tokens=max_tokens, n=n, stop=stop)
 
 
