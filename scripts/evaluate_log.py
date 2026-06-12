@@ -98,6 +98,100 @@ def get_input_nums(line: str):
     return [float(x) for x in re.findall(r'[\d.]+', line)]
 
 
+# ── Step 실패 분석 헬퍼 ───────────────────────────────────────────
+
+def _can_reach_24(nums: list, target: float = 24.0, tol: float = 1e-6) -> bool:
+    """남은 숫자들로 사칙연산을 통해 target에 도달 가능한지 brute-force 검증."""
+    if len(nums) == 1:
+        return abs(nums[0] - target) < tol
+    for i in range(len(nums)):
+        for j in range(len(nums)):
+            if i == j:
+                continue
+            a, b = nums[i], nums[j]
+            rest = [nums[k] for k in range(len(nums)) if k != i and k != j]
+            candidates = [a + b, a - b, a * b]
+            if abs(b) > tol:
+                candidates.append(a / b)
+            for c in candidates:
+                if _can_reach_24(rest + [c], target, tol):
+                    return True
+    return False
+
+
+def _cot_failure_step(y: str):
+    """CoT 출력 하나에서 첫 번째 실패 step 번호(1-indexed)를 반환.
+    모든 step을 통과해 최종 답이 24이면 None 반환(정답).
+    """
+    lines = [l.strip() for l in y.strip().split('\n') if l.strip()]
+    step = 0
+    for line in lines:
+        m = re.search(r'left:\s*([\d. ]+)\)', line)
+        if not m:
+            continue
+        step += 1
+        nums = [float(x) for x in m.group(1).strip().split()]
+        if len(nums) == 1:
+            return None if abs(nums[0] - 24) < 1e-6 else step
+        if not _can_reach_24(nums):
+            return step
+    return step if step else None  # 파싱 불가
+
+
+def _tot_failure_step(entry: dict):
+    """ToT 로그 entry에서 첫 번째 실패 step 번호(1-indexed)를 반환.
+    모든 step의 candidate 중 최소 하나가 살아있으면 None 반환(정답 후보 있음).
+    """
+    steps = entry.get('steps', [])
+    for step_i, step in enumerate(steps, start=1):
+        candidates = step.get('select_new_ys', [])
+        reachable = False
+        for y in candidates:
+            last = y.strip().split('\n')[-1]
+            m = re.search(r'left:\s*([\d. ]+)\)', last)
+            if not m:
+                continue
+            nums = [float(x) for x in m.group(1).strip().split()]
+            if len(nums) == 1:
+                if abs(nums[0] - 24) < 1e-6:
+                    return None  # 정답
+            elif _can_reach_24(nums):
+                reachable = True
+                break
+        if not reachable:
+            return step_i
+    return None
+
+
+def analyze_step_failures(data: list) -> dict:
+    """Figure 3(b)용: step별 첫 실패 분포를 집계한다."""
+    is_tot = any('steps' in e and e['steps'] for e in data)
+    dist = defaultdict(int)  # {1: n, 2: n, 3: n, None(correct): n}
+
+    for entry in data:
+        if is_tot:
+            fail = _tot_failure_step(entry)
+            ys = entry.get('ys', [])
+            if fail is None and ys:
+                infos = entry.get('infos', [])
+                if not any(info.get('r') for info in infos):
+                    fail = len(entry['steps'])  # 후보는 있었지만 최종 오답
+        else:
+            ys = entry.get('ys', [])
+            for y in ys:
+                fail = _cot_failure_step(y)
+                dist[fail] += 1
+            continue
+        dist[fail] += 1
+
+    n = sum(dist.values())
+    return {
+        'distribution': {str(k) if k is not None else 'correct': v for k, v in sorted(dist.items(), key=lambda x: (x[0] is None, x[0] if x[0] is not None else 0))},
+        'total': n,
+        'rates': {str(k) if k is not None else 'correct': round(v / n, 4) if n else 0 for k, v in sorted(dist.items(), key=lambda x: (x[0] is None, x[0] if x[0] is not None else 0))},
+    }
+
+
 # ── 메인 평가 함수 ────────────────────────────────────────────────
 
 def evaluate(log_path: str, save: bool = False):
@@ -277,6 +371,15 @@ def evaluate(log_path: str, save: bool = False):
     print(f"  cnt_any (1개 이상 정답):  {cnt_any}/{n_puzzles} = {cnt_any/n_puzzles*100:.0f}%")
     print(f"  cnt_sc  (CoT-SC 최다득표): {cnt_sc}/{n_puzzles} = {cnt_sc/n_puzzles*100:.0f}%")
 
+    # ── 3. Step 실패 분포 (Figure 3(b)) ──────────────────────────
+    step_fail = analyze_step_failures(data)
+    print(f"\n【 3. Step 실패 분포 (Figure 3(b)) 】")
+    print(sep)
+    for k, rate in step_fail['rates'].items():
+        label = f'Step {k}' if k != 'correct' else 'Correct'
+        print(f"  {label:<12}: {rate*100:.1f}%  ({step_fail['distribution'][k]}/{step_fail['total']})")
+    print()
+
     usage = data[-1].get('usage_so_far', {})
     if usage:
         print(f"\n  누적 토큰: prompt={usage.get('prompt_tokens',0):,} / "
@@ -314,6 +417,7 @@ def evaluate(log_path: str, save: bool = False):
             'cnt_sc_rate':  round(cnt_sc / n_puzzles, 4),
             'per_puzzle':   results,
         },
+        'step_failures': step_fail,
         'usage': usage,
     }
 
