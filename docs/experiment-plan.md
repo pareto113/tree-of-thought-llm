@@ -101,7 +101,7 @@ python run.py \
   --task_end_index 1000
 ```
 
-> 실험 2와 동일한 로그에서 majority vote / any-correct 두 가지를 모두 집계 가능.
+> 이 로그에서 CoT-SC(majority vote, 실험 4)와 CoT best of 100(any-correct, 실험 5)을 모두 집계 가능.
 
 ---
 
