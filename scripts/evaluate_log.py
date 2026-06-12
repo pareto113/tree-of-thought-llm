@@ -163,9 +163,23 @@ def _tot_failure_step(entry: dict):
     return None
 
 
+def _is_io_standard(data: list) -> bool:
+    """IO standard 로그인지 확인: 출력에 'left:' 패턴이 없으면 IO standard."""
+    for entry in data[:3]:
+        for y in entry.get('ys', []):
+            if re.search(r'left:\s*[\d. ]+\)', y):
+                return False
+    return True
+
+
 def analyze_step_failures(data: list) -> dict:
     """Figure 3(b)용: step별 첫 실패 분포를 집계한다."""
     is_tot = any('steps' in e and e['steps'] for e in data)
+
+    # IO standard는 step 구조 없음 → 분석 불가
+    if not is_tot and _is_io_standard(data):
+        return {'n/a': 'IO standard format has no intermediate steps'}
+
     dist = defaultdict(int)  # {1: n, 2: n, 3: n, None(correct): n}
 
     for entry in data:
@@ -275,6 +289,7 @@ def evaluate(log_path: str, save: bool = False):
                     fmt['value_dist']['mixed'] += 1
 
     # ── 2. 정확도 평가 ────────────────────────────────────────────
+    is_io_std = _is_io_standard(data)
     cnt_avg = 0
     cnt_any = 0
     cnt_sc  = 0
@@ -291,8 +306,8 @@ def evaluate(log_path: str, save: bool = False):
         cnt_avg += sum(accs) / len(accs)
         cnt_any += int(any(accs))
         answers = [y.strip().split('\n')[-1] for y in ys]
-        # CoT-SC: 가장 많이 등장한 표현식이 정답인지 확인 (plurality vote)
-        if answers:
+        # CoT-SC: CoT 출력에만 적용 (IO standard는 SC 없음)
+        if not is_io_std and answers:
             top_answer = Counter(answers).most_common(1)[0][0]
             top_correct = accs[answers.index(top_answer)] if answers.index(top_answer) < len(accs) else 0
             cnt_sc += int(top_correct)
@@ -368,16 +383,20 @@ def evaluate(log_path: str, save: bool = False):
         print(f"  {r['idx']:<6} {r['input']:<16} {mark:<6} {r['avg']:<8.3f}  {ans}")
 
     print(f"\n  cnt_avg (평균 정답률):    {cnt_avg/n_puzzles:.3f}")
-    print(f"  cnt_any (1개 이상 정답):  {cnt_any}/{n_puzzles} = {cnt_any/n_puzzles*100:.0f}%")
-    print(f"  cnt_sc  (CoT-SC 최다득표): {cnt_sc}/{n_puzzles} = {cnt_sc/n_puzzles*100:.0f}%")
+    print(f"  cnt_any (best of k):      {cnt_any}/{n_puzzles} = {cnt_any/n_puzzles*100:.0f}%")
+    if not is_io_std:
+        print(f"  cnt_sc  (CoT-SC 최다득표): {cnt_sc}/{n_puzzles} = {cnt_sc/n_puzzles*100:.0f}%")
 
     # ── 3. Step 실패 분포 (Figure 3(b)) ──────────────────────────
     step_fail = analyze_step_failures(data)
     print(f"\n【 3. Step 실패 분포 (Figure 3(b)) 】")
     print(sep)
-    for k, rate in step_fail['rates'].items():
-        label = f'Step {k}' if k != 'correct' else 'Correct'
-        print(f"  {label:<12}: {rate*100:.1f}%  ({step_fail['distribution'][k]}/{step_fail['total']})")
+    if 'n/a' in step_fail:
+        print(f"  {step_fail['n/a']}")
+    else:
+        for k, rate in step_fail['rates'].items():
+            label = f'Step {k}' if k != 'correct' else 'Correct'
+            print(f"  {label:<12}: {rate*100:.1f}%  ({step_fail['distribution'][k]}/{step_fail['total']})")
     print()
 
     usage = data[-1].get('usage_so_far', {})
@@ -413,8 +432,8 @@ def evaluate(log_path: str, save: bool = False):
             'cnt_avg':      round(cnt_avg / n_puzzles, 4),
             'cnt_any':      cnt_any,
             'cnt_any_rate': round(cnt_any / n_puzzles, 4),
-            'cnt_sc':       cnt_sc,
-            'cnt_sc_rate':  round(cnt_sc / n_puzzles, 4),
+            'cnt_sc':       None if is_io_std else cnt_sc,
+            'cnt_sc_rate':  None if is_io_std else round(cnt_sc / n_puzzles, 4),
             'per_puzzle':   results,
         },
         'step_failures': step_fail,
