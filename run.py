@@ -3,6 +3,9 @@ import json
 import time
 import argparse
 from datetime import timedelta
+from dotenv import load_dotenv
+
+load_dotenv()
 
 from tot.tasks import get_task
 from tot.methods.bfs import solve, naive_solve
