@@ -198,7 +198,7 @@ python run.py ... --n_select_sample 4 ...
 ## 진행 상황
 
 - [x] 실험 1: IO 단일 샘플
-- [ ] 실험 2: IO × 100 (IO best of 100)
+- [x] 실험 2: IO × 100 (IO best of 100)
 - [x] 실험 3: CoT 단일 샘플
 - [ ] 실험 4/5: CoT × 100 (CoT best of 100 + CoT-SC 겸용)
 - [ ] 실험 6: ToT (b=5)
