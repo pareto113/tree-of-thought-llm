@@ -238,7 +238,7 @@ python run.py \
 - [ ] 실험 6: ToT (b=5)
 - [ ] 실험 7: ToT (b=1)
 - [ ] 실험 8: ToT (b=2, 3, 4)
-- [ ] 실험 9: o4-mini IO×1 (추가 실험)
+- [x] 실험 9: o4-mini IO×1 (추가 실험) — 76%
 - [ ] Table 2 집계
 - [ ] Figure 3(a)(b) 데이터 집계
 - [ ] Table 7 비용 집계

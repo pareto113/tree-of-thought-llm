@@ -14,13 +14,17 @@ _SYSTEM_PROMPT = (
 
 completion_tokens = prompt_tokens = 0
 
-# gpt-4o-mini pricing (per 1M tokens)
+# pricing per 1M tokens; o4-mini output rate includes reasoning tokens
 _PRICING = {
     "gpt-4o-mini":         {"input": 0.15,  "output": 0.60},
     "gpt-4o":              {"input": 2.50,  "output": 10.00},
     "gpt-4":               {"input": 30.00, "output": 60.00},
     "gpt-3.5-turbo":       {"input": 0.50,  "output": 1.50},
+    "o4-mini":             {"input": 1.10,  "output": 4.40},
 }
+
+# reasoning models: max_completion_tokens, no stop parameter, temperature fixed to 1
+_REASONING_MODELS = {"o1", "o1-mini", "o3", "o3-mini", "o4-mini"}
 
 
 @backoff.on_exception(
@@ -43,14 +47,24 @@ def gpt(prompt, model="gpt-4o-mini", temperature=0.7, max_tokens=1000, n=1, stop
 def chatgpt(messages, model="gpt-4o-mini", temperature=0.7, max_tokens=1000, n=1, stop=None) -> list:
     global completion_tokens, prompt_tokens
 
-    response = _create(
-        model=model,
-        messages=messages,
-        temperature=temperature,
-        max_tokens=max_tokens,
-        n=n,
-        stop=stop,
-    )
+    if model in _REASONING_MODELS:
+        # reasoning models: fixed temperature=1, max_completion_tokens, no stop
+        response = _create(
+            model=model,
+            messages=messages,
+            temperature=1,
+            max_completion_tokens=4000,
+            n=n,
+        )
+    else:
+        response = _create(
+            model=model,
+            messages=messages,
+            temperature=temperature,
+            max_tokens=max_tokens,
+            n=n,
+            stop=stop,
+        )
 
     completion_tokens += response.usage.completion_tokens
     prompt_tokens += response.usage.prompt_tokens

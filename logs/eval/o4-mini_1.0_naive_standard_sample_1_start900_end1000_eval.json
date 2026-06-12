@@ -1,0 +1,1344 @@
+{
+  "source_log": "logs/game24/o4-mini_1.0_naive_standard_sample_1_start900_end1000.json",
+  "meta": {
+    "model": "o4-mini",
+    "temperature": 1.0,
+    "method": "naive_standard_sample_1",
+    "puzzle_range": "900-999"
+  },
+  "n_puzzles": 100,
+  "format": {
+    "propose": {
+      "total": 0,
+      "empty": 0,
+      "fmt_ok": 0,
+      "fmt_ok_rate": null,
+      "math_ok": 0,
+      "math_ok_rate": null,
+      "math_errors": {}
+    },
+    "value": {
+      "total": 0,
+      "parseable": 0,
+      "parseable_rate": null,
+      "distribution": {}
+    }
+  },
+  "accuracy": {
+    "cnt_avg": 0.76,
+    "cnt_any": 76,
+    "cnt_any_rate": 0.76,
+    "cnt_sc": null,
+    "cnt_sc_rate": null,
+    "per_puzzle": [
+      {
+        "idx": 900,
+        "input": "4 5 6 10",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 6 * 5 - (10 - 4) = 24"
+        ]
+      },
+      {
+        "idx": 901,
+        "input": "1 2 4 7",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (7 + 1 + 4) * 2 = 24"
+        ]
+      },
+      {
+        "idx": 902,
+        "input": "2 5 8 11",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: ((11 - 5) / 2) * 8 = 24"
+        ]
+      },
+      {
+        "idx": 903,
+        "input": "3 4 4 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (13 - (4 + 3)) * 4 = 24"
+        ]
+      },
+      {
+        "idx": 904,
+        "input": "6 7 8 9",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 6 * 8 / (9 - 7) = 24"
+        ]
+      },
+      {
+        "idx": 905,
+        "input": "1 11 11 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (11 + 1) * (13 - 11) = 24"
+        ]
+      },
+      {
+        "idx": 906,
+        "input": "1 8 10 11",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (11 + 1) * (10 - 8) = 24"
+        ]
+      },
+      {
+        "idx": 907,
+        "input": "2 3 6 9",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (9 / 3) * (6 + 2) = 24"
+        ]
+      },
+      {
+        "idx": 908,
+        "input": "1 3 5 9",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 9 * 1 + 5 * 3 = 24"
+        ]
+      },
+      {
+        "idx": 909,
+        "input": "3 3 7 12",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (12 - (7 - 3)) * 3 = 24"
+        ]
+      },
+      {
+        "idx": 910,
+        "input": "4 5 7 9",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (7 * 4) - (9 - 5) = 24"
+        ]
+      },
+      {
+        "idx": 911,
+        "input": "1 2 8 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 1 + 2 + 8 + 13 = 24"
+        ]
+      },
+      {
+        "idx": 912,
+        "input": "4 6 6 9",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 9 * 4 - 6 - 6 = 24"
+        ]
+      },
+      {
+        "idx": 913,
+        "input": "1 4 4 8",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (8 - 1) * 4 - 4 = 24"
+        ]
+      },
+      {
+        "idx": 914,
+        "input": "1 5 10 11",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (11 + 1) * (10 / 5) = 24"
+        ]
+      },
+      {
+        "idx": 915,
+        "input": "3 4 6 11",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "6 / (3 - (11 / 4)) = 24"
+        ]
+      },
+      {
+        "idx": 916,
+        "input": "2 4 8 9",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "idx": 917,
+        "input": "1 4 5 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (13 - 5) * (4 - 1) = 24"
+        ]
+      },
+      {
+        "idx": 918,
+        "input": "2 2 7 12",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (12 - 2) + (7 * 2) = 24"
+        ]
+      },
+      {
+        "idx": 919,
+        "input": "3 3 6 7",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          "Answer: 6 * 3 * (7 - 3) / 3 = 24"
+        ]
+      },
+      {
+        "idx": 920,
+        "input": "1 5 9 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (13 - 9) * (5 + 1) = 24"
+        ]
+      },
+      {
+        "idx": 921,
+        "input": "5 6 7 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 6 * 5 - (13 - 7) = 24"
+        ]
+      },
+      {
+        "idx": 922,
+        "input": "5 5 8 10",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (5 - 10 / 5) * 8 = 24"
+        ]
+      },
+      {
+        "idx": 923,
+        "input": "2 4 6 12",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (12 - 4) * (6 / 2) = 24"
+        ]
+      },
+      {
+        "idx": 924,
+        "input": "6 7 8 11",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (11 + 7) * 8 / 6 = 24"
+        ]
+      },
+      {
+        "idx": 925,
+        "input": "7 9 9 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (13 + 9) + (9 - 7) = 24"
+        ]
+      },
+      {
+        "idx": 926,
+        "input": "3 6 9 12",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (12 / (9 / 3)) * 6 = 24"
+        ]
+      },
+      {
+        "idx": 927,
+        "input": "6 9 12 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 13 + 9 + 12 / 6 = 24"
+        ]
+      },
+      {
+        "idx": 928,
+        "input": "4 7 9 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 7 * (13 - 9) - 4 = 24"
+        ]
+      },
+      {
+        "idx": 929,
+        "input": "5 6 8 12",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 8 * (5 - 12 / 6) = 24"
+        ]
+      },
+      {
+        "idx": 930,
+        "input": "2 4 6 7",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: ((7 * 4) - 6) + 2 = 24"
+        ]
+      },
+      {
+        "idx": 931,
+        "input": "2 5 10 10",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          "Answer: (5 - 10/10) + 2 * 10 = 24"
+        ]
+      },
+      {
+        "idx": 932,
+        "input": "6 6 7 12",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 6 * 7 - (6 + 12) = 24"
+        ]
+      },
+      {
+        "idx": 933,
+        "input": "6 9 9 11",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "idx": 934,
+        "input": "5 8 11 12",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (11 - 5) * (12 - 8) = 24"
+        ]
+      },
+      {
+        "idx": 935,
+        "input": "5 6 8 10",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (6 / (10 / 5)) * 8 = 24"
+        ]
+      },
+      {
+        "idx": 936,
+        "input": "6 11 12 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (13 - 11) * 6 + 12 = 24"
+        ]
+      },
+      {
+        "idx": 937,
+        "input": "2 2 8 8",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 8 * (8 - 2) / 2 = 24"
+        ]
+      },
+      {
+        "idx": 938,
+        "input": "2 7 12 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 12 / (7 - 13 / 2) = 24"
+        ]
+      },
+      {
+        "idx": 939,
+        "input": "2 6 8 12",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 8 * (12 / (6 - 2)) = 24"
+        ]
+      },
+      {
+        "idx": 940,
+        "input": "3 4 9 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (13 - (9 - 4)) * 3 = 24"
+        ]
+      },
+      {
+        "idx": 941,
+        "input": "4 5 10 12",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (12 * 4) / (10 / 5) = 24"
+        ]
+      },
+      {
+        "idx": 942,
+        "input": "1 2 7 11",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (7 * 2) + (11 - 1) = 24"
+        ]
+      },
+      {
+        "idx": 943,
+        "input": "4 5 6 8",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "idx": 944,
+        "input": "6 10 12 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 6 * (12 / (13 - 10)) = 24"
+        ]
+      },
+      {
+        "idx": 945,
+        "input": "1 3 9 9",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (9 - 1) / (3 / 9) = 24"
+        ]
+      },
+      {
+        "idx": 946,
+        "input": "1 4 4 11",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (11 - 4 - 1) * 4 = 24"
+        ]
+      },
+      {
+        "idx": 947,
+        "input": "2 3 9 10",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 10 * 3 / 2 + 9 = 24"
+        ]
+      },
+      {
+        "idx": 948,
+        "input": "1 2 3 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 13 * 2 - (3 - 1) = 24"
+        ]
+      },
+      {
+        "idx": 949,
+        "input": "1 6 6 6",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          "Answer: (6 - (1 + 6/6)) * 6 = 24"
+        ]
+      },
+      {
+        "idx": 950,
+        "input": "1 2 2 9",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "idx": 951,
+        "input": "1 3 6 11",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (11 + 1) / 3 * 6 = 24"
+        ]
+      },
+      {
+        "idx": 952,
+        "input": "5 10 12 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (10 - (13 - 5)) * 12 = 24"
+        ]
+      },
+      {
+        "idx": 953,
+        "input": "2 3 6 6",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          "Answer: (6 / (2 - 3/6)) * 6 = 24"
+        ]
+      },
+      {
+        "idx": 954,
+        "input": "6 7 10 12",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (6 / (10 - 7)) * 12 = 24"
+        ]
+      },
+      {
+        "idx": 955,
+        "input": "7 8 8 12",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (8 - (12 - 7)) * 8 = 24"
+        ]
+      },
+      {
+        "idx": 956,
+        "input": "3 4 6 8",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (8 - 6) * 4 * 3 = 24"
+        ]
+      },
+      {
+        "idx": 957,
+        "input": "1 7 9 11",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (11 + 1) * (9 - 7) = 24"
+        ]
+      },
+      {
+        "idx": 958,
+        "input": "2 3 6 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 13 + 6 + 3 + 2 = 24"
+        ]
+      },
+      {
+        "idx": 959,
+        "input": "2 2 5 12",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          "Answer: (5 - (2 / 2)) * (12 / 2) = 24"
+        ]
+      },
+      {
+        "idx": 960,
+        "input": "2 6 8 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 13 + 8 + 6 / 2 = 24"
+        ]
+      },
+      {
+        "idx": 961,
+        "input": "8 8 10 12",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 8 * (12 - 10) + 8 = 24"
+        ]
+      },
+      {
+        "idx": 962,
+        "input": "1 3 8 13",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "idx": 963,
+        "input": "4 4 7 10",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (4 + 4) * (10 - 7) = 24"
+        ]
+      },
+      {
+        "idx": 964,
+        "input": "1 7 10 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (7 + 1) * (13 - 10) = 24"
+        ]
+      },
+      {
+        "idx": 965,
+        "input": "1 9 10 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (13 - 10) * (9 - 1) = 24"
+        ]
+      },
+      {
+        "idx": 966,
+        "input": "3 3 4 11",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          "Answer: (11 - 3) * (4 - 3/3) = 24"
+        ]
+      },
+      {
+        "idx": 967,
+        "input": "2 5 7 7",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          "Answer: (7 - 2) * 5 - 7 / 7 = 24"
+        ]
+      },
+      {
+        "idx": 968,
+        "input": "3 9 10 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 9 * 3 + 10 - 13 = 24"
+        ]
+      },
+      {
+        "idx": 969,
+        "input": "2 3 4 7",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 4 * (7 - 3 + 2) = 24"
+        ]
+      },
+      {
+        "idx": 970,
+        "input": "4 4 8 12",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          "Answer: (12 + 4 - 4) * (8 / 4) = 24"
+        ]
+      },
+      {
+        "idx": 971,
+        "input": "1 2 6 10",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (10 / 2 - 1) * 6 = 24"
+        ]
+      },
+      {
+        "idx": 972,
+        "input": "1 5 12 12",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 12 * (12 / (5 + 1)) = 24"
+        ]
+      },
+      {
+        "idx": 973,
+        "input": "5 6 6 8",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "idx": 974,
+        "input": "7 7 8 11",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "idx": 975,
+        "input": "1 3 7 10",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "idx": 976,
+        "input": "3 3 9 12",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (9 - 3) * (12 / 3) = 24"
+        ]
+      },
+      {
+        "idx": 977,
+        "input": "3 5 7 10",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 7 * (5 - 3) + 10 = 24"
+        ]
+      },
+      {
+        "idx": 978,
+        "input": "4 10 12 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (13 - 10) * (12 - 4) = 24"
+        ]
+      },
+      {
+        "idx": 979,
+        "input": "2 3 10 12",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 3 * 10 - 12 / 2 = 24"
+        ]
+      },
+      {
+        "idx": 980,
+        "input": "3 4 6 6",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (6 * 6) - (4 * 3) = 24"
+        ]
+      },
+      {
+        "idx": 981,
+        "input": "5 8 8 8",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (5 * 8) - 8 - 8 = 24"
+        ]
+      },
+      {
+        "idx": 982,
+        "input": "6 8 8 12",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "idx": 983,
+        "input": "2 3 4 9",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (9 / 3) * (4 * 2) = 24"
+        ]
+      },
+      {
+        "idx": 984,
+        "input": "2 6 7 11",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "idx": 985,
+        "input": "5 9 12 12",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "idx": 986,
+        "input": "1 2 7 12",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (7 - 1) * 2 + 12 = 24"
+        ]
+      },
+      {
+        "idx": 987,
+        "input": "2 4 5 6",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 5 * (6 - 2) + 4 = 24"
+        ]
+      },
+      {
+        "idx": 988,
+        "input": "5 5 8 13",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          "Answer: 5 * 5 - (8 / (13 - 5)) = 24"
+        ]
+      },
+      {
+        "idx": 989,
+        "input": "2 3 3 10",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 10 * 3 - 3 * 2 = 24"
+        ]
+      },
+      {
+        "idx": 990,
+        "input": "3 4 8 12",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          "Answer: (3/(4/(12 - 8))) * 8 = 24"
+        ]
+      },
+      {
+        "idx": 991,
+        "input": "2 4 6 11",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "idx": 992,
+        "input": "2 2 8 9",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 9 * 2 + 8 - 2 = 24"
+        ]
+      },
+      {
+        "idx": 993,
+        "input": "1 5 6 7",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 5 * 6 - (7 - 1) = 24"
+        ]
+      },
+      {
+        "idx": 994,
+        "input": "5 8 10 11",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          "Answer: (11 - 5) / (10 - 8) * 8 = 24"
+        ]
+      },
+      {
+        "idx": 995,
+        "input": "4 4 9 12",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (9 - 12 / 4) * 4 = 24"
+        ]
+      },
+      {
+        "idx": 996,
+        "input": "2 5 6 6",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 6 * (5 - 2) + 6 = 24"
+        ]
+      },
+      {
+        "idx": 997,
+        "input": "2 4 9 12",
+        "any": false,
+        "avg": 0.0,
+        "sc": false,
+        "accs": [
+          0
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "idx": 998,
+        "input": "4 8 11 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: 4 * (11 - (13 - 8)) = 24"
+        ]
+      },
+      {
+        "idx": 999,
+        "input": "4 9 10 13",
+        "any": true,
+        "avg": 1.0,
+        "sc": false,
+        "accs": [
+          1
+        ],
+        "answers": [
+          "Answer: (13 - 9) * (10 - 4) = 24"
+        ]
+      }
+    ]
+  },
+  "step_failures": {
+    "n/a": "IO standard format has no intermediate steps"
+  },
+  "usage": {
+    "completion_tokens": 156366,
+    "prompt_tokens": 21800,
+    "cost": 0.7119904
+  }
+}
