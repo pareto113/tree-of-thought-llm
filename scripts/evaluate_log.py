@@ -13,7 +13,7 @@ import re
 import sys
 import os
 import argparse
-from collections import defaultdict
+from collections import defaultdict, Counter
 
 
 def _parse_filename_meta(log_path: str) -> dict:
@@ -183,6 +183,7 @@ def evaluate(log_path: str, save: bool = False):
     # ── 2. 정확도 평가 ────────────────────────────────────────────
     cnt_avg = 0
     cnt_any = 0
+    cnt_sc  = 0
     results = []
 
     for entry in data:
@@ -196,6 +197,13 @@ def evaluate(log_path: str, save: bool = False):
         cnt_avg += sum(accs) / len(accs)
         cnt_any += int(any(accs))
         answers = [y.strip().split('\n')[-1] for y in ys]
+        # CoT-SC: 가장 많이 등장한 표현식이 정답인지 확인 (plurality vote)
+        if answers:
+            top_answer = Counter(answers).most_common(1)[0][0]
+            top_correct = accs[answers.index(top_answer)] if answers.index(top_answer) < len(accs) else 0
+            cnt_sc += int(top_correct)
+        else:
+            top_correct = 0
         if entry.get('x'):
             input_str = entry['x']
         elif entry.get('steps'):
@@ -207,6 +215,7 @@ def evaluate(log_path: str, save: bool = False):
             'input':   input_str,
             'any':     any(accs),
             'avg':     sum(accs) / len(accs),
+            'sc':      bool(top_correct),
             'accs':    accs,
             'answers': answers,
         })
@@ -264,8 +273,9 @@ def evaluate(log_path: str, save: bool = False):
         ans = r['answers'][correct_idx] if correct_idx is not None else (r['answers'][0] if r['answers'] else '-')
         print(f"  {r['idx']:<6} {r['input']:<16} {mark:<6} {r['avg']:<8.3f}  {ans}")
 
-    print(f"\n  cnt_avg (평균 정답률): {cnt_avg/n_puzzles:.3f}")
-    print(f"  cnt_any (1개 이상 정답): {cnt_any}/{n_puzzles} = {cnt_any/n_puzzles*100:.0f}%")
+    print(f"\n  cnt_avg (평균 정답률):    {cnt_avg/n_puzzles:.3f}")
+    print(f"  cnt_any (1개 이상 정답):  {cnt_any}/{n_puzzles} = {cnt_any/n_puzzles*100:.0f}%")
+    print(f"  cnt_sc  (CoT-SC 과반수):  {cnt_sc}/{n_puzzles} = {cnt_sc/n_puzzles*100:.0f}%")
 
     usage = data[-1].get('usage_so_far', {})
     if usage:
@@ -297,10 +307,12 @@ def evaluate(log_path: str, save: bool = False):
             },
         },
         'accuracy': {
-            'cnt_avg':  round(cnt_avg / n_puzzles, 4),
-            'cnt_any':  cnt_any,
+            'cnt_avg':      round(cnt_avg / n_puzzles, 4),
+            'cnt_any':      cnt_any,
             'cnt_any_rate': round(cnt_any / n_puzzles, 4),
-            'per_puzzle': results,
+            'cnt_sc':       cnt_sc,
+            'cnt_sc_rate':  round(cnt_sc / n_puzzles, 4),
+            'per_puzzle':   results,
         },
         'usage': usage,
     }
