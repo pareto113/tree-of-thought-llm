@@ -1,0 +1,204 @@
+Namespace(backend='gpt-4o-mini', method_evaluate=None, method_generate=None, method_select='greedy', n_evaluate_sample=1, n_generate_sample=100, n_select_sample=1, naive_run=True, prompt_sample='cot', task='game24', task_end_index=1000, task_start_index=900, temperature=0.7)
+[1/100] idx=900 | sum(accs)=10 cnt_avg=0.100 cnt_any=1 | puzzle=0:01:58 avg=0:01:58 elapsed=0:01:58 ETA=3:15:39
+
+[2/100] idx=901 | sum(accs)=0 cnt_avg=0.100 cnt_any=1 | puzzle=0:01:22 avg=0:01:40 elapsed=0:03:20 ETA=2:43:49
+
+[3/100] idx=902 | sum(accs)=0 cnt_avg=0.100 cnt_any=1 | puzzle=0:01:56 avg=0:01:45 elapsed=0:05:16 ETA=2:50:46
+
+[4/100] idx=903 | sum(accs)=0 cnt_avg=0.100 cnt_any=1 | puzzle=0:02:02 avg=0:01:49 elapsed=0:07:19 ETA=2:55:44
+
+[5/100] idx=904 | sum(accs)=0 cnt_avg=0.100 cnt_any=1 | puzzle=0:01:31 avg=0:01:46 elapsed=0:08:50 ETA=2:48:05
+
+[6/100] idx=905 | sum(accs)=2 cnt_avg=0.120 cnt_any=2 | puzzle=0:02:35 avg=0:01:54 elapsed=0:11:26 ETA=2:59:16
+
+[7/100] idx=906 | sum(accs)=0 cnt_avg=0.120 cnt_any=2 | puzzle=0:02:17 avg=0:01:57 elapsed=0:13:44 ETA=3:02:29
+
+[8/100] idx=907 | sum(accs)=0 cnt_avg=0.120 cnt_any=2 | puzzle=0:02:38 avg=0:02:02 elapsed=0:16:23 ETA=3:08:25
+
+[9/100] idx=908 | sum(accs)=0 cnt_avg=0.120 cnt_any=2 | puzzle=0:01:55 avg=0:02:02 elapsed=0:18:18 ETA=3:05:05
+
+[10/100] idx=909 | sum(accs)=16 cnt_avg=0.280 cnt_any=3 | puzzle=0:01:51 avg=0:02:01 elapsed=0:20:10 ETA=3:01:30
+
+[11/100] idx=910 | sum(accs)=22 cnt_avg=0.500 cnt_any=4 | puzzle=0:01:26 avg=0:01:57 elapsed=0:21:37 ETA=2:54:54
+
+[12/100] idx=911 | sum(accs)=0 cnt_avg=0.500 cnt_any=4 | puzzle=0:01:59 avg=0:01:58 elapsed=0:23:36 ETA=2:53:11
+
+[13/100] idx=912 | sum(accs)=0 cnt_avg=0.500 cnt_any=4 | puzzle=0:01:38 avg=0:01:56 elapsed=0:25:15 ETA=2:49:02
+
+[14/100] idx=913 | sum(accs)=0 cnt_avg=0.500 cnt_any=4 | puzzle=0:01:49 avg=0:01:56 elapsed=0:27:05 ETA=2:46:23
+
+[15/100] idx=914 | sum(accs)=0 cnt_avg=0.500 cnt_any=4 | puzzle=0:02:39 avg=0:01:58 elapsed=0:29:44 ETA=2:48:31
+
+[16/100] idx=915 | sum(accs)=0 cnt_avg=0.500 cnt_any=4 | puzzle=0:01:58 avg=0:01:58 elapsed=0:31:43 ETA=2:46:32
+
+[17/100] idx=916 | sum(accs)=0 cnt_avg=0.500 cnt_any=4 | puzzle=0:02:36 avg=0:02:01 elapsed=0:34:19 ETA=2:47:34
+
+[18/100] idx=917 | sum(accs)=4 cnt_avg=0.540 cnt_any=5 | puzzle=0:04:39 avg=0:02:09 elapsed=0:38:58 ETA=2:57:33
+
+[19/100] idx=918 | sum(accs)=0 cnt_avg=0.540 cnt_any=5 | puzzle=0:01:52 avg=0:02:09 elapsed=0:40:51 ETA=2:54:10
+
+[20/100] idx=919 | sum(accs)=0 cnt_avg=0.540 cnt_any=5 | puzzle=0:02:13 avg=0:02:09 elapsed=0:43:04 ETA=2:52:17
+
+[21/100] idx=920 | sum(accs)=0 cnt_avg=0.540 cnt_any=5 | puzzle=0:01:51 avg=0:02:08 elapsed=0:44:56 ETA=2:49:02
+
+[22/100] idx=921 | sum(accs)=1 cnt_avg=0.550 cnt_any=6 | puzzle=0:03:14 avg=0:02:11 elapsed=0:48:10 ETA=2:50:48
+
+[23/100] idx=922 | sum(accs)=0 cnt_avg=0.550 cnt_any=6 | puzzle=0:02:32 avg=0:02:12 elapsed=0:50:42 ETA=2:49:47
+
+[24/100] idx=923 | sum(accs)=0 cnt_avg=0.550 cnt_any=6 | puzzle=0:01:54 avg=0:02:11 elapsed=0:52:37 ETA=2:46:38
+
+[25/100] idx=924 | sum(accs)=0 cnt_avg=0.550 cnt_any=6 | puzzle=0:01:41 avg=0:02:10 elapsed=0:54:19 ETA=2:42:57
+
+[26/100] idx=925 | sum(accs)=0 cnt_avg=0.550 cnt_any=6 | puzzle=0:03:11 avg=0:02:12 elapsed=0:57:30 ETA=2:43:41
+
+[27/100] idx=926 | sum(accs)=1 cnt_avg=0.560 cnt_any=7 | puzzle=0:01:58 avg=0:02:12 elapsed=0:59:29 ETA=2:40:50
+
+[28/100] idx=927 | sum(accs)=1 cnt_avg=0.570 cnt_any=8 | puzzle=0:02:40 avg=0:02:13 elapsed=1:02:09 ETA=2:39:49
+
+[29/100] idx=928 | sum(accs)=1 cnt_avg=0.580 cnt_any=9 | puzzle=0:02:29 avg=0:02:13 elapsed=1:04:38 ETA=2:38:15
+
+[30/100] idx=929 | sum(accs)=0 cnt_avg=0.580 cnt_any=9 | puzzle=0:01:59 avg=0:02:13 elapsed=1:06:38 ETA=2:35:28
+
+[31/100] idx=930 | sum(accs)=0 cnt_avg=0.580 cnt_any=9 | puzzle=0:02:59 avg=0:02:14 elapsed=1:09:37 ETA=2:34:58
+
+[32/100] idx=931 | sum(accs)=4 cnt_avg=0.620 cnt_any=10 | puzzle=0:04:36 avg=0:02:19 elapsed=1:14:14 ETA=2:37:44
+
+[33/100] idx=932 | sum(accs)=0 cnt_avg=0.620 cnt_any=10 | puzzle=0:03:09 avg=0:02:20 elapsed=1:17:23 ETA=2:37:08
+
+[34/100] idx=933 | sum(accs)=6 cnt_avg=0.680 cnt_any=11 | puzzle=0:02:12 avg=0:02:20 elapsed=1:19:36 ETA=2:34:32
+
+[35/100] idx=934 | sum(accs)=2 cnt_avg=0.700 cnt_any=12 | puzzle=0:01:49 avg=0:02:19 elapsed=1:21:25 ETA=2:31:13
+
+[36/100] idx=935 | sum(accs)=1 cnt_avg=0.710 cnt_any=13 | puzzle=0:03:05 avg=0:02:20 elapsed=1:24:31 ETA=2:30:15
+
+[37/100] idx=936 | sum(accs)=53 cnt_avg=1.240 cnt_any=14 | puzzle=0:01:34 avg=0:02:19 elapsed=1:26:06 ETA=2:26:36
+
+[38/100] idx=937 | sum(accs)=0 cnt_avg=1.240 cnt_any=14 | puzzle=0:01:49 avg=0:02:18 elapsed=1:27:55 ETA=2:23:27
+
+[39/100] idx=938 | sum(accs)=1 cnt_avg=1.250 cnt_any=15 | puzzle=0:01:56 avg=0:02:18 elapsed=1:29:52 ETA=2:20:34
+
+[40/100] idx=939 | sum(accs)=0 cnt_avg=1.250 cnt_any=15 | puzzle=0:03:00 avg=0:02:19 elapsed=1:32:52 ETA=2:19:18
+
+[41/100] idx=940 | sum(accs)=4 cnt_avg=1.290 cnt_any=16 | puzzle=0:01:41 avg=0:02:18 elapsed=1:34:34 ETA=2:16:05
+
+[42/100] idx=941 | sum(accs)=0 cnt_avg=1.290 cnt_any=16 | puzzle=0:02:40 avg=0:02:18 elapsed=1:37:14 ETA=2:14:17
+
+[43/100] idx=942 | sum(accs)=0 cnt_avg=1.290 cnt_any=16 | puzzle=0:02:06 avg=0:02:18 elapsed=1:39:21 ETA=2:11:42
+
+[44/100] idx=943 | sum(accs)=0 cnt_avg=1.290 cnt_any=16 | puzzle=0:02:33 avg=0:02:18 elapsed=1:41:54 ETA=2:09:42
+
+[45/100] idx=944 | sum(accs)=0 cnt_avg=1.290 cnt_any=16 | puzzle=0:02:57 avg=0:02:19 elapsed=1:44:52 ETA=2:08:10
+
+[46/100] idx=945 | sum(accs)=0 cnt_avg=1.290 cnt_any=16 | puzzle=0:02:24 avg=0:02:19 elapsed=1:47:16 ETA=2:05:56
+
+[47/100] idx=946 | sum(accs)=0 cnt_avg=1.290 cnt_any=16 | puzzle=0:02:03 avg=0:02:19 elapsed=1:49:20 ETA=2:03:17
+
+[48/100] idx=947 | sum(accs)=0 cnt_avg=1.290 cnt_any=16 | puzzle=0:02:45 avg=0:02:20 elapsed=1:52:06 ETA=2:01:26
+
+[49/100] idx=948 | sum(accs)=0 cnt_avg=1.290 cnt_any=16 | puzzle=0:02:42 avg=0:02:20 elapsed=1:54:48 ETA=1:59:30
+
+[50/100] idx=949 | sum(accs)=1 cnt_avg=1.300 cnt_any=17 | puzzle=0:01:54 avg=0:02:20 elapsed=1:56:43 ETA=1:56:43
+
+[51/100] idx=950 | sum(accs)=0 cnt_avg=1.300 cnt_any=17 | puzzle=0:02:51 avg=0:02:20 elapsed=1:59:34 ETA=1:54:53
+
+[52/100] idx=951 | sum(accs)=0 cnt_avg=1.300 cnt_any=17 | puzzle=0:02:26 avg=0:02:20 elapsed=2:02:01 ETA=1:52:38
+
+[53/100] idx=952 | sum(accs)=1 cnt_avg=1.310 cnt_any=18 | puzzle=0:02:58 avg=0:02:21 elapsed=2:05:00 ETA=1:50:51
+
+[54/100] idx=953 | sum(accs)=98 cnt_avg=2.290 cnt_any=19 | puzzle=0:01:41 avg=0:02:20 elapsed=2:06:42 ETA=1:47:55
+
+[55/100] idx=954 | sum(accs)=0 cnt_avg=2.290 cnt_any=19 | puzzle=0:02:11 avg=0:02:20 elapsed=2:08:53 ETA=1:45:27
+
+[56/100] idx=955 | sum(accs)=1 cnt_avg=2.300 cnt_any=20 | puzzle=0:01:34 avg=0:02:19 elapsed=2:10:27 ETA=1:42:30
+
+[57/100] idx=956 | sum(accs)=54 cnt_avg=2.840 cnt_any=21 | puzzle=0:01:30 avg=0:02:18 elapsed=2:11:57 ETA=1:39:33
+
+[58/100] idx=957 | sum(accs)=0 cnt_avg=2.840 cnt_any=21 | puzzle=0:03:07 avg=0:02:19 elapsed=2:15:05 ETA=1:37:49
+
+[59/100] idx=958 | sum(accs)=0 cnt_avg=2.840 cnt_any=21 | puzzle=0:02:02 avg=0:02:19 elapsed=2:17:07 ETA=1:35:17
+
+[60/100] idx=959 | sum(accs)=0 cnt_avg=2.840 cnt_any=21 | puzzle=0:02:22 avg=0:02:19 elapsed=2:19:30 ETA=1:33:00
+
+[61/100] idx=960 | sum(accs)=0 cnt_avg=2.840 cnt_any=21 | puzzle=0:02:16 avg=0:02:19 elapsed=2:21:46 ETA=1:30:38
+
+[62/100] idx=961 | sum(accs)=89 cnt_avg=3.730 cnt_any=22 | puzzle=0:02:09 avg=0:02:19 elapsed=2:23:56 ETA=1:28:13
+
+[63/100] idx=962 | sum(accs)=0 cnt_avg=3.730 cnt_any=22 | puzzle=0:02:13 avg=0:02:19 elapsed=2:26:09 ETA=1:25:50
+
+[64/100] idx=963 | sum(accs)=3 cnt_avg=3.760 cnt_any=23 | puzzle=0:02:34 avg=0:02:19 elapsed=2:28:44 ETA=1:23:39
+
+[65/100] idx=964 | sum(accs)=0 cnt_avg=3.760 cnt_any=23 | puzzle=0:02:44 avg=0:02:19 elapsed=2:31:28 ETA=1:21:33
+
+[66/100] idx=965 | sum(accs)=0 cnt_avg=3.760 cnt_any=23 | puzzle=0:02:55 avg=0:02:20 elapsed=2:34:24 ETA=1:19:32
+
+[67/100] idx=966 | sum(accs)=2 cnt_avg=3.780 cnt_any=24 | puzzle=0:03:10 avg=0:02:21 elapsed=2:37:34 ETA=1:17:36
+
+[68/100] idx=967 | sum(accs)=4 cnt_avg=3.820 cnt_any=25 | puzzle=0:02:42 avg=0:02:21 elapsed=2:40:17 ETA=1:15:26
+
+[69/100] idx=968 | sum(accs)=31 cnt_avg=4.130 cnt_any=26 | puzzle=0:03:04 avg=0:02:22 elapsed=2:43:22 ETA=1:13:24
+
+[70/100] idx=969 | sum(accs)=0 cnt_avg=4.130 cnt_any=26 | puzzle=0:02:25 avg=0:02:22 elapsed=2:45:47 ETA=1:11:03
+
+[71/100] idx=970 | sum(accs)=0 cnt_avg=4.130 cnt_any=26 | puzzle=0:05:02 avg=0:02:24 elapsed=2:50:50 ETA=1:09:46
+
+[72/100] idx=971 | sum(accs)=0 cnt_avg=4.130 cnt_any=26 | puzzle=0:02:21 avg=0:02:24 elapsed=2:53:11 ETA=1:07:21
+
+[73/100] idx=972 | sum(accs)=1 cnt_avg=4.140 cnt_any=27 | puzzle=0:02:21 avg=0:02:24 elapsed=2:55:33 ETA=1:04:56
+
+[74/100] idx=973 | sum(accs)=4 cnt_avg=4.180 cnt_any=28 | puzzle=0:03:48 avg=0:02:25 elapsed=2:59:22 ETA=1:03:01
+
+[75/100] idx=974 | sum(accs)=0 cnt_avg=4.180 cnt_any=28 | puzzle=0:02:44 avg=0:02:25 elapsed=3:02:07 ETA=1:00:42
+
+[76/100] idx=975 | sum(accs)=0 cnt_avg=4.180 cnt_any=28 | puzzle=0:02:22 avg=0:02:25 elapsed=3:04:30 ETA=0:58:15
+
+[77/100] idx=976 | sum(accs)=0 cnt_avg=4.180 cnt_any=28 | puzzle=0:02:13 avg=0:02:25 elapsed=3:06:44 ETA=0:55:46
+
+[78/100] idx=977 | sum(accs)=26 cnt_avg=4.440 cnt_any=29 | puzzle=0:02:08 avg=0:02:25 elapsed=3:08:53 ETA=0:53:16
+
+[79/100] idx=978 | sum(accs)=85 cnt_avg=5.290 cnt_any=30 | puzzle=0:02:26 avg=0:02:25 elapsed=3:11:19 ETA=0:50:51
+
+[80/100] idx=979 | sum(accs)=0 cnt_avg=5.290 cnt_any=30 | puzzle=0:01:47 avg=0:02:24 elapsed=3:13:07 ETA=0:48:16
+
+[81/100] idx=980 | sum(accs)=0 cnt_avg=5.290 cnt_any=30 | puzzle=0:01:41 avg=0:02:24 elapsed=3:14:49 ETA=0:45:42
+
+[82/100] idx=981 | sum(accs)=1 cnt_avg=5.300 cnt_any=31 | puzzle=0:02:49 avg=0:02:24 elapsed=3:17:38 ETA=0:43:23
+
+[83/100] idx=982 | sum(accs)=0 cnt_avg=5.300 cnt_any=31 | puzzle=0:03:57 avg=0:02:25 elapsed=3:21:36 ETA=0:41:17
+
+[84/100] idx=983 | sum(accs)=0 cnt_avg=5.300 cnt_any=31 | puzzle=0:01:54 avg=0:02:25 elapsed=3:23:31 ETA=0:38:45
+
+[85/100] idx=984 | sum(accs)=0 cnt_avg=5.300 cnt_any=31 | puzzle=0:01:37 avg=0:02:24 elapsed=3:25:08 ETA=0:36:12
+
+[86/100] idx=985 | sum(accs)=1 cnt_avg=5.310 cnt_any=32 | puzzle=0:03:32 avg=0:02:25 elapsed=3:28:40 ETA=0:33:58
+
+[87/100] idx=986 | sum(accs)=0 cnt_avg=5.310 cnt_any=32 | puzzle=0:04:00 avg=0:02:26 elapsed=3:32:41 ETA=0:31:46
+
+[88/100] idx=987 | sum(accs)=1 cnt_avg=5.320 cnt_any=33 | puzzle=0:03:14 avg=0:02:27 elapsed=3:35:55 ETA=0:29:26
+
+[89/100] idx=988 | sum(accs)=1 cnt_avg=5.330 cnt_any=34 | puzzle=0:04:05 avg=0:02:28 elapsed=3:40:01 ETA=0:27:11
+
+[90/100] idx=989 | sum(accs)=0 cnt_avg=5.330 cnt_any=34 | puzzle=0:02:32 avg=0:02:28 elapsed=3:42:33 ETA=0:24:43
+
+[91/100] idx=990 | sum(accs)=0 cnt_avg=5.330 cnt_any=34 | puzzle=0:02:31 avg=0:02:28 elapsed=3:45:04 ETA=0:22:15
+
+[92/100] idx=991 | sum(accs)=0 cnt_avg=5.330 cnt_any=34 | puzzle=0:02:46 avg=0:02:28 elapsed=3:47:51 ETA=0:19:48
+
+[93/100] idx=992 | sum(accs)=0 cnt_avg=5.330 cnt_any=34 | puzzle=0:02:56 avg=0:02:28 elapsed=3:50:48 ETA=0:17:22
+
+[94/100] idx=993 | sum(accs)=12 cnt_avg=5.450 cnt_any=35 | puzzle=0:02:05 avg=0:02:28 elapsed=3:52:53 ETA=0:14:51
+
+[95/100] idx=994 | sum(accs)=0 cnt_avg=5.450 cnt_any=35 | puzzle=0:04:23 avg=0:02:29 elapsed=3:57:17 ETA=0:12:29
+
+[96/100] idx=995 | sum(accs)=3 cnt_avg=5.480 cnt_any=36 | puzzle=0:03:23 avg=0:02:30 elapsed=4:00:41 ETA=0:10:01
+
+[97/100] idx=996 | sum(accs)=0 cnt_avg=5.480 cnt_any=36 | puzzle=0:02:22 avg=0:02:30 elapsed=4:03:03 ETA=0:07:31
+
+[98/100] idx=997 | sum(accs)=56 cnt_avg=6.040 cnt_any=37 | puzzle=0:02:14 avg=0:02:30 elapsed=4:05:18 ETA=0:05:00
+
+[99/100] idx=998 | sum(accs)=0 cnt_avg=6.040 cnt_any=37 | puzzle=0:02:25 avg=0:02:30 elapsed=4:07:44 ETA=0:02:30
+
+[100/100] idx=999 | sum(accs)=13 cnt_avg=6.170 cnt_any=38 | puzzle=0:02:06 avg=0:02:29 elapsed=4:09:50 ETA=0:00:00
+
+0.06169999999999999 0.38
+usage_so_far {'completion_tokens': 878789, 'prompt_tokens': 47600, 'cost': 0.5344134}
+total_time=4:09:50

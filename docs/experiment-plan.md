@@ -238,10 +238,38 @@ python run.py \
 - [x] 실험 2: IO × 100 (IO best of 100)
 - [x] 실험 3: CoT 단일 샘플
 - [x] 실험 4/5: CoT × 100 (CoT best of 100 + CoT-SC 겸용) — CoT-SC 9%, best of 100 38%
-- [ ] 실험 6: ToT (b=5)
-- [ ] 실험 7: ToT (b=1)
-- [ ] 실험 8: ToT (b=2, 3, 4)
+- [ ] 실험 6: ToT (b=5) — 진행중 15/100 (40%), RPD 한도 초과로 중단
+- [ ] 실험 7: ToT (b=1) — 진행중 38/100 (23%), RPD 한도 초과로 중단
+- [ ] 실험 8: ToT (b=2, 3, 4) — b=4 완료(52%), b=2 26/100, b=3 21/100 중단
 - [x] 실험 9: o4-mini IO×1 (추가 실험) — 76%
 - [ ] Table 2 집계
 - [ ] Figure 3(a)(b) 데이터 집계
 - [ ] Table 7 비용 집계
+
+---
+
+## ToT 실험 재개 방법
+
+> **RPD 한도**: gpt-4o-mini 일일 요청 10,000건. 5개 병렬 실행 시 하루 안에 소진됨.
+> 리셋 주기: 매일 (현재 기준 약 21시간 후 리셋).
+
+### 재개 순서 (2일로 분할)
+
+**Day 1** — b=1, 2, 3 재개 (~7,100건, resume 로직으로 이어서 실행):
+```bash
+source .venv-gpt4o/bin/activate
+bash scripts/run_tot_parallel_b123.sh  # 아래 생성 예정
+```
+
+**Day 2** — b=5 재개 (~6,000건):
+```bash
+source .venv-gpt4o/bin/activate
+nohup python run.py --task game24 --backend gpt-4o-mini \
+  --method_generate propose --n_generate_sample 1 \
+  --method_evaluate value --n_evaluate_sample 3 \
+  --method_select greedy --n_select_sample 5 \
+  --task_start_index 900 --task_end_index 1000 \
+  > logs/run_tot_b5.log 2>&1 &
+```
+
+> resume 로직이 기존 로그를 읽어 완료된 퍼즐을 건너뜀. 별도 조작 불필요.
