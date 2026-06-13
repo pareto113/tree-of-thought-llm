@@ -237,7 +237,7 @@ python run.py \
 - [x] 실험 1: IO 단일 샘플
 - [x] 실험 2: IO × 100 (IO best of 100)
 - [x] 실험 3: CoT 단일 샘플
-- [ ] 실험 4/5: CoT × 100 (CoT best of 100 + CoT-SC 겸용)
+- [x] 실험 4/5: CoT × 100 (CoT best of 100 + CoT-SC 겸용) — CoT-SC 9%, best of 100 38%
 - [ ] 실험 6: ToT (b=5)
 - [ ] 실험 7: ToT (b=1)
 - [ ] 실험 8: ToT (b=2, 3, 4)
