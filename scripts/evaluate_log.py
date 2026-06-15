@@ -173,37 +173,75 @@ def _is_io_standard(data: list) -> bool:
 
 
 def analyze_step_failures(data: list) -> dict:
-    """Figure 3(b)용: step별 첫 실패 분포를 집계한다."""
+    """Figure 3(b)용: step별 첫 실패 분포를 집계한다.
+
+    ToT 전용 카테고리:
+      - 1, 2, 3, ... : BFS 탐색이 해당 step에서 소멸 (search failure)
+      - 'answer_fmt_error': BFS가 left=24에 도달했으나 Answer 표현식이 틀림 (ADR-0007)
+      - 'correct': 최종 정답
+    """
     is_tot = any('steps' in e and e['steps'] for e in data)
 
     # IO standard는 step 구조 없음 → 분석 불가
     if not is_tot and _is_io_standard(data):
         return {'n/a': 'IO standard format has no intermediate steps'}
 
-    dist = defaultdict(int)  # {1: n, 2: n, 3: n, None(correct): n}
+    dist = defaultdict(int)
 
     for entry in data:
         if is_tot:
             fail = _tot_failure_step(entry)
-            ys = entry.get('ys', [])
-            if fail is None and ys:
+            if fail is None:
                 infos = entry.get('infos', [])
-                if not any(info.get('r') for info in infos):
-                    fail = len(entry['steps'])  # 후보는 있었지만 최종 오답
+                if any(info.get('r') for info in infos):
+                    fail = 'correct'
+                else:
+                    # BFS가 left=24에 도달했지만 최종 Answer 표현식이 틀림 (ADR-0007)
+                    fail = 'answer_fmt_error'
         else:
             ys = entry.get('ys', [])
             for y in ys:
                 fail = _cot_failure_step(y)
-                dist[fail] += 1
+                dist[fail if fail is not None else 'correct'] += 1
             continue
         dist[fail] += 1
 
     n = sum(dist.values())
+
+    def _sort_key(k):
+        if isinstance(k, int):
+            return (0, k)
+        if k == 'answer_fmt_error':
+            return (1, 0)
+        return (2, 0)  # 'correct'
+
+    sorted_items = sorted(dist.items(), key=lambda x: _sort_key(x[0]))
     return {
-        'distribution': {str(k) if k is not None else 'correct': v for k, v in sorted(dist.items(), key=lambda x: (x[0] is None, x[0] if x[0] is not None else 0))},
+        'distribution': {str(k): v for k, v in sorted_items},
         'total': n,
-        'rates': {str(k) if k is not None else 'correct': round(v / n, 4) if n else 0 for k, v in sorted(dist.items(), key=lambda x: (x[0] is None, x[0] if x[0] is not None else 0))},
+        'rates': {str(k): round(v / n, 4) if n else 0 for k, v in sorted_items},
     }
+
+
+def compute_nodes_visited(data: list) -> dict:
+    """Figure 3(a)용: nodes_visited(퍼즐당 평균) 집계.
+
+    nodes_visited = 전체 steps에서 len(new_ys) 합산 / 퍼즐 수
+    논문 정의: 'number of partial solutions evaluated' (ADR-0007)
+    """
+    is_tot = any('steps' in e and e['steps'] for e in data)
+    if not is_tot:
+        # naive_run: 퍼즐당 n_generate_sample개 샘플 = nodes
+        total = sum(len(e.get('ys', [])) for e in data)
+        per_puzzle = total / len(data) if data else 0
+        return {'total': total, 'per_puzzle': round(per_puzzle, 2), 'note': 'naive_run: nodes = n_generate_sample'}
+
+    total = 0
+    for entry in data:
+        for step in entry.get('steps', []):
+            total += len(step.get('new_ys', []))
+    per_puzzle = total / len(data) if data else 0
+    return {'total': total, 'per_puzzle': round(per_puzzle, 2)}
 
 
 # ── 메인 평가 함수 ────────────────────────────────────────────────
@@ -395,8 +433,23 @@ def evaluate(log_path: str, save: bool = False):
         print(f"  {step_fail['n/a']}")
     else:
         for k, rate in step_fail['rates'].items():
-            label = f'Step {k}' if k != 'correct' else 'Correct'
-            print(f"  {label:<12}: {rate*100:.1f}%  ({step_fail['distribution'][k]}/{step_fail['total']})")
+            if k == 'correct':
+                label = 'Correct'
+            elif k == 'answer_fmt_error':
+                label = 'Ans fmt err'
+            else:
+                label = f'Step {k}'
+            print(f"  {label:<14}: {rate*100:.1f}%  ({step_fail['distribution'][k]}/{step_fail['total']})")
+    print()
+
+    # ── 4. Nodes visited (Figure 3(a)) ────────────────────────
+    nodes = compute_nodes_visited(data)
+    print(f"【 4. Nodes visited (Figure 3(a)) 】")
+    print(sep)
+    print(f"  총 nodes:        {nodes['total']:,}")
+    print(f"  퍼즐당 평균:      {nodes['per_puzzle']}")
+    if 'note' in nodes:
+        print(f"  ({nodes['note']})")
     print()
 
     usage = data[-1].get('usage_so_far', {})
@@ -437,6 +490,7 @@ def evaluate(log_path: str, save: bool = False):
             'per_puzzle':   results,
         },
         'step_failures': step_fail,
+        'nodes_visited': nodes,
         'usage': usage,
     }
 
