@@ -238,9 +238,9 @@ python run.py \
 - [x] 실험 2: IO × 100 (IO best of 100)
 - [x] 실험 3: CoT 단일 샘플
 - [x] 실험 4/5: CoT × 100 (CoT best of 100 + CoT-SC 겸용) — CoT-SC 9%, best of 100 38%
-- [ ] 실험 6: ToT (b=5) — 진행중 15/100 (40%), RPD 한도 초과로 중단
-- [ ] 실험 7: ToT (b=1) — 진행중 38/100 (23%), RPD 한도 초과로 중단
-- [ ] 실험 8: ToT (b=2, 3, 4) — b=4 완료(52%), b=2 26/100, b=3 21/100 중단
+- [x] 실험 6: ToT (b=5) — 60% (60/100)
+- [x] 실험 7: ToT (b=1) — 26% (26/100)
+- [x] 실험 8: ToT (b=2, 3, 4) — b=2 완료(27%), b=3 완료(44%), b=4 완료(52%)
 - [x] 실험 9: o4-mini IO×1 (추가 실험) — 76%
 - [ ] Table 2 집계
 - [ ] Figure 3(a)(b) 데이터 집계
@@ -248,17 +248,42 @@ python run.py \
 
 ---
 
+## RPD(Requests Per Day) 관리
+
+gpt-4o-mini는 일반적인 RPM(분당 요청) 외에 **RPD(일별 요청 한도, 10,000건)**가 별도로 존재한다.
+대부분의 OpenAI 모델에는 RPM만 적용되며 RPD는 gpt-4o-mini 등 일부 모델에만 해당한다.
+
+**RPD의 특성 — rolling window**:
+- 매일 특정 시각에 일괄 리셋되지 않는다.
+- 요청이 소비된 후 일정 시간이 지나면 그만큼 실시간으로 천천히 보충된다.
+- 즉, 기다리다 보면 RPD가 조금씩 회복되므로 완전 소진 후 "다음날 0시"를 기다릴 필요가 없다.
+
+**잔여량 확인**:
+```bash
+source .venv-gpt4o/bin/activate
+python scripts/check_rpd.py
+```
+출력 예:
+```
+RPD remaining : 8,432 / 10,000
+RPD reset in  : 1h23m45s
+```
+
+**실험 전 자동 체크**: `run_tot_parallel.sh`, `run_tot_b123.sh`는 실험 시작 전 RPD 잔여량을 자동으로 확인하고, 부족할 경우 계속 여부를 묻는다.
+
+---
+
 ## ToT 실험 재개 방법
 
 > **RPD 한도**: gpt-4o-mini 일일 요청 10,000건. 5개 병렬 실행 시 하루 안에 소진됨.
-> 리셋 주기: 매일 (현재 기준 약 21시간 후 리셋).
+> RPD는 rolling window이므로 일정 시간 대기 후 재개 가능 (특정 시각 리셋 아님).
 
 ### 재개 순서 (2일로 분할)
 
 **Day 1** — b=1, 2, 3 재개 (~7,100건, resume 로직으로 이어서 실행):
 ```bash
 source .venv-gpt4o/bin/activate
-bash scripts/run_tot_parallel_b123.sh  # 아래 생성 예정
+bash scripts/run_tot_b123.sh
 ```
 
 **Day 2** — b=5 재개 (~6,000건):
